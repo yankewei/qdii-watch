@@ -6,13 +6,16 @@
     "scrape": "tsx scraper.ts",
     "dev": "cd docs && python3 -m http.server 8080",
     "deploy": "wrangler deploy",
-    "preview": "wrangler dev"
+    "preview": "wrangler dev",
+    "test": "vitest run"
   },
   "dependencies": {
     "cheerio": "^1.0.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260530.1",
     "tsx": "^4.19.0",
+    "vitest": "^4.1.7",
     "wrangler": "^4.95.0"
   }
 }
