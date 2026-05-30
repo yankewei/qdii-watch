@@ -1,19 +1,22 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "qdii-watch",
+  "main": "worker.ts",
   "compatibility_date": "2026-05-30",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "docs"
+    "directory": "docs",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
   },
   "compatibility_flags": [
     "nodejs_compat"
   ],
   "kv_namespaces": [
     {
-      "binding": "qdii-watch-subscriptions",
+      "binding": "SUBSCRIPTIONS",
       "id": "387eba0542b84caba741ec8b3ea102a9"
     }
   ]

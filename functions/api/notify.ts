@@ -38,6 +38,14 @@ function buildPayload(sub: WebhookSubscription, changes: FundChange[], updatedAt
 export const onRequestPost: PagesFunction<{ SUBSCRIPTIONS: KVNamespace; NOTIFY_TOKEN: string }> = async (context) => {
   const { request, env } = context;
 
+  if (!env.NOTIFY_TOKEN) {
+    console.error('Missing NOTIFY_TOKEN');
+    return new Response(JSON.stringify({ error: 'Server misconfigured' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
   const auth = request.headers.get('Authorization');
   const expected = `Bearer ${env.NOTIFY_TOKEN}`;
   if (!auth || auth !== expected) {

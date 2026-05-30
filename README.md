@@ -18,7 +18,7 @@
 
 - **数据抓取**: TypeScript + Node.js + Cheerio
 - **前端**: 纯 HTML5 / CSS3 / Vanilla JS（零构建工具）
-- **部署**: Cloudflare Pages（静态托管）+ GitHub Actions（定时爬虫）
+- **部署**: Cloudflare Workers（静态资源 + API）+ GitHub Actions（定时爬虫）
 - **数据源**: [天天基金网](https://fund.eastmoney.com)
 
 ## 本地运行
@@ -32,7 +32,7 @@ npm run scrape
 
 # 3. 启动本地服务器预览
 npm run dev
-# 访问 http://localhost:8080
+# 访问 http://localhost:8787
 ```
 
 或者一步完成：
@@ -41,29 +41,17 @@ npm run dev
 npm install && npm run scrape && npm run dev
 ```
 
-## 部署到 Cloudflare Pages
-
-### 方式一：Git 集成（推荐）
-
-1. 登录 [dash.cloudflare.com](https://dash.cloudflare.com) → Workers & Pages → Create a project
-2. 连接 GitHub 仓库
-3. Build settings：
-   - **Build command**:（留空，纯静态不需要构建）
-   - **Build output directory**: `docs`
-4. Save and Deploy
-
-之后每次 `git push` 到 main 分支，Cloudflare 自动重新部署。
-
-### 方式二：Wrangler CLI
+## 部署到 Cloudflare Workers
 
 ```bash
-npm install -g wrangler
-npx wrangler pages deploy docs --project-name=qdii-watch
+npm ci
+npx wrangler secret put NOTIFY_TOKEN
+npm run deploy
 ```
 
 ## 定时自动更新
 
-GitHub Actions 已配置每 4 小时自动抓取一次。抓取后如果有数据变化，会自动 push 到仓库，Cloudflare Pages 随后自动重新部署。
+GitHub Actions 已配置每 4 小时自动抓取一次。抓取后如果有数据变化，会自动 push 到仓库，并调用 Worker API 发送订阅通知。
 
 也可手动触发：仓库页面 → Actions → Scrape Fund Limits → Run workflow。
 

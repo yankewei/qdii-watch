@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "scrape": "tsx scraper.ts",
-    "dev": "cd docs && python3 -m http.server 8080",
+    "dev": "wrangler dev",
+    "dev:static": "cd docs && python3 -m http.server 8080",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev",
     "test": "vitest run"
