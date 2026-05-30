@@ -13,8 +13,8 @@
   ],
   "kv_namespaces": [
     {
-      "binding": "SUBSCRIPTIONS",
-      "id": ""
+      "binding": "qdii-watch-subscriptions",
+      "id": "387eba0542b84caba741ec8b3ea102a9"
     }
   ]
 }
