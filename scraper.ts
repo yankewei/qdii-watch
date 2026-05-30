@@ -17,6 +17,9 @@ interface FundData {
   statusText: string;
   limitAmount: number | null;
   rawStatus: string;
+  weeklyReturn: number | null;
+  monthlyReturn: number | null;
+  yearlyReturn: number | null;
 }
 
 const FUNDS: Fund[] = [
@@ -43,6 +46,7 @@ const HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'zh-CN,zh;q=0.9',
+  'Referer': 'https://fund.eastmoney.com/',
 };
 
 async function fetchFundPage(code: string): Promise<string | null> {
@@ -68,6 +72,9 @@ function parseFundPage(html: string, code: string): FundData {
     statusText: '',
     limitAmount: null,
     rawStatus: '',
+    weeklyReturn: null,
+    monthlyReturn: null,
+    yearlyReturn: null,
   };
 
   // 提取申购状态
@@ -111,6 +118,61 @@ function sleep(ms: number) {
   return new Promise(r => setTimeout(r, ms));
 }
 
+async function fetchReturnRates(codes: string[]): Promise<Map<string, { weekly: number | null; monthly: number | null; yearly: number | null }>> {
+  const map = new Map<string, { weekly: number | null; monthly: number | null; yearly: number | null }>();
+  let firstDone = false;
+
+  for (const code of codes) {
+    const url = `https://fundf10.eastmoney.com/FundArchivesDatas.aspx?type=jdzf&code=${code}&per=1`;
+
+    try {
+      const res = await fetch(url, { headers: HEADERS });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+
+      const fn = new Function(text + '; return apidata;');
+      const data: { content: string } = fn();
+      const html = data.content || '';
+      const $ = cheerio.load(html);
+
+      const result: { weekly: number | null; monthly: number | null; yearly: number | null } = {
+        weekly: null,
+        monthly: null,
+        yearly: null,
+      };
+
+      const labelMap: Record<string, keyof typeof result> = {
+        '近1周': 'weekly',
+        '近1月': 'monthly',
+        '近1年': 'yearly',
+      };
+
+      $('ul').each((_, ul) => {
+        const title = $(ul).find('li.title').first().text().trim();
+        const key = labelMap[title];
+        if (!key) return;
+        const valText = $(ul).find('li.tor').first().text().trim();
+        const m = valText.match(/(-?[\d.]+)%/);
+        if (m) result[key] = parseFloat(m[1]);
+      });
+
+      if (!firstDone) {
+        console.log(`[收益率] ${code} -> 1周=${result.weekly}% 1月=${result.monthly}% 1年=${result.yearly}%`);
+        firstDone = true;
+      }
+
+      map.set(code, result);
+    } catch (e) {
+      console.error(`[收益率] ${code} 获取失败:`, e);
+    }
+
+    await sleep(300);
+  }
+
+  console.log(`收益率数据: ${map.size}/${codes.length} 只基金获取成功`);
+  return map;
+}
+
 async function main() {
   console.log('='.repeat(50));
   console.log('QDII-Watch 爬虫启动');
@@ -129,6 +191,9 @@ async function main() {
         statusText: '获取失败',
         limitAmount: null,
         rawStatus: '',
+        weeklyReturn: null,
+        monthlyReturn: null,
+        yearlyReturn: null,
       });
       continue;
     }
@@ -139,6 +204,22 @@ async function main() {
     results.push(parsed);
     console.log(`[${fund.code}] ${fund.name} -> status=${parsed.status}, limit=${parsed.limitAmount}`);
     await sleep(500);
+  }
+
+  // 获取收益率数据
+  const codes = FUNDS.map(f => f.code);
+  const returnMap = await fetchReturnRates(codes);
+  for (const r of results) {
+    const ret = returnMap.get(r.code);
+    if (ret) {
+      r.weeklyReturn = ret.weekly;
+      r.monthlyReturn = ret.monthly;
+      r.yearlyReturn = ret.yearly;
+    } else {
+      r.weeklyReturn = null;
+      r.monthlyReturn = null;
+      r.yearlyReturn = null;
+    }
   }
 
   // 排序: open > limited > suspended > unknown > error

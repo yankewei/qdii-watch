@@ -4,6 +4,9 @@ export interface FundData {
   company: string;
   status: string;
   limitAmount: number | null;
+  weeklyReturn: number | null;
+  monthlyReturn: number | null;
+  yearlyReturn: number | null;
 }
 
 export interface FundChange {

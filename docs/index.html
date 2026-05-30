@@ -420,6 +420,54 @@
       font-weight: 400;
     }
 
+    .return-chips {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+    }
+
+    .return-chip {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 7px;
+      min-width: 56px;
+    }
+
+    .return-chip .val {
+      font-weight: 700;
+      font-size: 0.82rem;
+      line-height: 1.25;
+    }
+
+    .return-chip .lbl {
+      font-size: 0.65rem;
+      line-height: 1.25;
+      opacity: 0.7;
+    }
+
+    .return-chip.pos {
+      background: #dcfce7;
+    }
+
+    .return-chip.pos .val { color: #166534; }
+
+    .return-chip.neg {
+      background: #fee2e2;
+    }
+
+    .return-chip.neg .val { color: #991b1b; }
+
+    .return-chip.na {
+      background: #f3f4f6;
+    }
+
+    .return-chip.na .val {
+      color: #9ca3af;
+      font-weight: 400;
+    }
+
     .loading, .empty, .error {
       text-align: center;
       padding: 60px 20px;
@@ -490,6 +538,8 @@
       <select id="sortSelect" aria-label="排序方式">
         <option value="limit-desc" selected>限额 ↓（高到低）</option>
         <option value="limit-asc">限额 ↑（低到高）</option>
+        <option value="return-desc">收益率 ↓</option>
+        <option value="return-asc">收益率 ↑</option>
         <option value="name">名称</option>
       </select>
       <button class="subscribe-trigger" id="subscribeTrigger" aria-label="订阅通知">
@@ -598,6 +648,17 @@
             ? `<span class="limit-amount">${f.limitAmount.toLocaleString()} 元</span>`
             : '<span class="limit-amount na">—</span>';
 
+          const chips = [
+            { val: f.weeklyReturn, label: '近1周' },
+            { val: f.monthlyReturn, label: '近1月' },
+            { val: f.yearlyReturn, label: '近1年' },
+          ].map(c => {
+            if (c.val == null) return `<div class="return-chip na"><span class="val">—</span><span class="lbl">${c.label}</span></div>`;
+            const cls = c.val >= 0 ? 'pos' : 'neg';
+            const sign = c.val >= 0 ? '+' : '';
+            return `<div class="return-chip ${cls}"><span class="val">${sign}${c.val.toFixed(2)}%</span><span class="lbl">${c.label}</span></div>`;
+          }).join('');
+
           return `<tr>
             <td>
               <div class="fund-name"><a href="https://fund.eastmoney.com/${f.code}.html" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">${escapeHtml(f.name)}</a></div>
@@ -606,6 +667,7 @@
             <td class="hide-mobile company">${escapeHtml(f.company)}</td>
             <td><span class="badge ${st.cls}">${st.text}</span></td>
             <td style="text-align:right">${limit}</td>
+            <td><div class="return-chips">${chips}</div></td>
           </tr>`;
         }).join('');
 
@@ -617,6 +679,7 @@
                 <th class="hide-mobile">基金公司</th>
                 <th>状态</th>
                 <th style="text-align:right">日累计限额</th>
+                <th style="text-align:center">收益率</th>
               </tr>
             </thead>
             <tbody>${rows}</tbody>
@@ -661,6 +724,26 @@
           result.sort((a, b) => (a.limitAmount ?? Infinity) - (b.limitAmount ?? Infinity));
         } else if (sort === 'limit-desc') {
           result.sort((a, b) => (b.limitAmount ?? -Infinity) - (a.limitAmount ?? -Infinity));
+        } else if (sort === 'return-asc') {
+          result.sort((a, b) => {
+            const ay = a.yearlyReturn ?? -Infinity;
+            const by = b.yearlyReturn ?? -Infinity;
+            if (ay !== by) return ay - by;
+            const am = a.monthlyReturn ?? -Infinity;
+            const bm = b.monthlyReturn ?? -Infinity;
+            if (am !== bm) return am - bm;
+            return (a.weeklyReturn ?? -Infinity) - (b.weeklyReturn ?? -Infinity);
+          });
+        } else if (sort === 'return-desc') {
+          result.sort((a, b) => {
+            const ay = a.yearlyReturn ?? -Infinity;
+            const by = b.yearlyReturn ?? -Infinity;
+            if (ay !== by) return by - ay;
+            const am = a.monthlyReturn ?? -Infinity;
+            const bm = b.monthlyReturn ?? -Infinity;
+            if (am !== bm) return bm - am;
+            return (b.weeklyReturn ?? -Infinity) - (a.weeklyReturn ?? -Infinity);
+          });
         } else if (sort === 'name') {
           result.sort((a, b) => a.name.localeCompare(b.name, 'zh-CN'));
         }
