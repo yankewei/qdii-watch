@@ -80,6 +80,217 @@
     .filters input { flex: 1; min-width: 160px; max-width: 300px; }
     .filters input::placeholder { color: #9ca3af; }
 
+    .subscribe-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--primary);
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .subscribe-trigger:hover {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.10);
+    }
+    .subscribe-trigger.active {
+      background: #eff6ff;
+      border-color: var(--primary);
+    }
+    .subscribe-trigger svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(15,23,42,0.35);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: var(--card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow:
+        0 4px 6px -1px rgba(0,0,0,0.08),
+        0 20px 50px -12px rgba(0,0,0,0.18);
+      transform: translateY(16px) scale(0.97);
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+      overflow: hidden;
+    }
+    .modal-overlay.open .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px 0;
+    }
+    .modal-header h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .modal-close {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: background 0.15s, color 0.15s;
+    }
+    .modal-close:hover {
+      background: #f3f4f6;
+      color: var(--text);
+    }
+    .modal-close svg { width: 18px; height: 18px; }
+
+    .modal-body {
+      padding: 20px 24px 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .radio-pill {
+      flex: 1;
+      position: relative;
+    }
+    .radio-pill input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .radio-pill span {
+      display: block;
+      text-align: center;
+      padding: 9px 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+      color: var(--text-secondary);
+      background: var(--card);
+    }
+    .radio-pill input:checked + span {
+      border-color: var(--primary);
+      background: #eff6ff;
+      color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.10);
+    }
+    .radio-pill span:hover {
+      border-color: #c7d2fe;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      outline: none;
+      background: var(--card);
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.10);
+    }
+    .form-input::placeholder { color: #b0b8c4; }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .modal-actions button {
+      flex: 1;
+      padding: 10px 0;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .modal-actions button:active { transform: scale(0.98); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+    }
+    .btn-primary:hover { background: #1d4ed8; }
+
+    .btn-secondary {
+      background: var(--bg);
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .btn-secondary:hover { background: #eef0f4; }
+
+    .btn-danger {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1.5px solid #fecaca;
+    }
+    .btn-danger:hover { background: #fee2e2; }
+
+    .modal-status {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      min-height: 1.4em;
+      text-align: center;
+    }
+    .modal-status.success { color: var(--success); }
+    .modal-status.error { color: var(--danger); }
+
     .stats-bar {
       display: flex;
       justify-content: center;
@@ -245,6 +456,10 @@
       th, td { padding: 10px; }
       .hide-mobile { display: none; }
       .fund-name { font-size: 0.85rem; }
+      .subscribe-trigger svg { display: none; }
+      .modal { border-radius: 12px; margin: auto 8px; }
+      .modal-header { padding: 16px 18px 0; }
+      .modal-body { padding: 16px 18px 20px; }
     }
   </style>
 </head>
@@ -276,6 +491,10 @@
         <option value="limit-asc">限额 ↑（低到高）</option>
         <option value="name">名称</option>
       </select>
+      <button class="subscribe-trigger" id="subscribeTrigger" aria-label="订阅通知">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        订阅通知
+      </button>
     </div>
 
     <div class="card table-wrap">
@@ -284,33 +503,30 @@
       </div>
     </div>
 
-    <div class="card" style="margin-top: 20px; padding: 16px;">
-      <h2 style="font-size: 1.1rem; margin-bottom: 12px;">📬 订阅限额变动通知</h2>
-      <div id="subscribeForm">
-        <div style="margin-bottom: 10px;">
-          <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">通知方式</label>
-          <div style="display: flex; gap: 16px;">
-            <label style="font-size: 0.9rem; cursor: pointer;">
-              <input type="radio" name="notifyType" value="feishu" checked> 飞书
-            </label>
-            <label style="font-size: 0.9rem; cursor: pointer;">
-              <input type="radio" name="notifyType" value="dingtalk"> 钉钉
-            </label>
-            <label style="font-size: 0.9rem; cursor: pointer;">
-              <input type="radio" name="notifyType" value="webhook"> 通用 Webhook
-            </label>
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-header">
+          <h2 id="modalTitle">订阅限额变动通知</h2>
+          <button class="modal-close" id="modalClose" aria-label="关闭">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label class="form-label">通知方式</label>
+          <div class="radio-group">
+            <label class="radio-pill"><input type="radio" name="notifyType" value="feishu" checked><span>飞书</span></label>
+            <label class="radio-pill"><input type="radio" name="notifyType" value="dingtalk"><span>钉钉</span></label>
+            <label class="radio-pill"><input type="radio" name="notifyType" value="webhook"><span>Webhook</span></label>
           </div>
+          <label class="form-label" for="webhookUrl">Webhook URL</label>
+          <input type="text" id="webhookUrl" class="form-input" placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/xxx">
+          <div class="modal-actions">
+            <button id="subscribeBtn" class="btn-primary">订阅</button>
+            <button id="testBtn" class="btn-secondary" style="display:none">测试发送</button>
+            <button id="unsubscribeBtn" class="btn-danger" style="display:none">取消订阅</button>
+          </div>
+          <div id="subscribeStatus" class="modal-status"></div>
         </div>
-        <div style="margin-bottom: 10px;">
-          <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">Webhook URL</label>
-          <input type="text" id="webhookUrl" placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/xxx" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem;">
-        </div>
-        <div style="display: flex; gap: 8px;">
-          <button id="subscribeBtn" style="padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 0.9rem; cursor: pointer;">订阅</button>
-          <button id="testBtn" style="padding: 8px 16px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; cursor: pointer; display: none;">测试发送</button>
-          <button id="unsubscribeBtn" style="padding: 8px 16px; background: #fee2e2; color: #991b1b; border: none; border-radius: 8px; font-size: 0.9rem; cursor: pointer; display: none;">取消订阅</button>
-        </div>
-        <div id="subscribeStatus" style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);"></div>
       </div>
     </div>
 
@@ -471,10 +687,14 @@
       els.statusFilter.addEventListener('change', applyFilters);
       els.sortSelect.addEventListener('change', applyFilters);
 
-      // Subscription panel
+      // Subscription modal
       (function() {
         const API_BASE = '';
         const STORAGE_KEY = 'qdii_notify_sub';
+
+        const overlay = document.getElementById('modalOverlay');
+        const trigger = document.getElementById('subscribeTrigger');
+        const closeBtn = document.getElementById('modalClose');
 
         const subEls = {
           urlInput: document.getElementById('webhookUrl'),
@@ -483,6 +703,29 @@
           unsubscribeBtn: document.getElementById('unsubscribeBtn'),
           status: document.getElementById('subscribeStatus'),
         };
+
+        function openModal() {
+          overlay.classList.add('open');
+          trigger.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          updateUI();
+        }
+        function closeModal() {
+          overlay.classList.remove('open');
+          trigger.classList.remove('active');
+          document.body.style.overflow = '';
+          subEls.status.textContent = '';
+          subEls.status.className = 'modal-status';
+        }
+
+        trigger.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+        });
 
         function getType() {
           const checked = document.querySelector('input[name="notifyType"]:checked');
@@ -509,25 +752,37 @@
             const radios = document.querySelectorAll('input[name="notifyType"]');
             radios.forEach(r => { if (r.value === sub.type) r.checked = true; });
             subEls.subscribeBtn.style.display = 'none';
-            subEls.testBtn.style.display = 'inline-block';
-            subEls.unsubscribeBtn.style.display = 'inline-block';
-            subEls.status.textContent = '已订阅 ' + (sub.type === 'feishu' ? '飞书' : sub.type === 'dingtalk' ? '钉钉' : '通用 Webhook');
+            subEls.testBtn.style.display = '';
+            subEls.unsubscribeBtn.style.display = '';
+            trigger.classList.add('active');
+            const typeLabel = sub.type === 'feishu' ? '飞书' : sub.type === 'dingtalk' ? '钉钉' : 'Webhook';
+            trigger.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>已订阅 · ' + typeLabel;
           } else {
-            subEls.subscribeBtn.style.display = 'inline-block';
+            subEls.subscribeBtn.style.display = '';
             subEls.testBtn.style.display = 'none';
             subEls.unsubscribeBtn.style.display = 'none';
             subEls.status.textContent = '';
+            subEls.status.className = 'modal-status';
+            if (!overlay.classList.contains('open')) {
+              trigger.classList.remove('active');
+              trigger.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>订阅通知';
+            }
           }
+        }
+
+        function setStatus(text, type) {
+          subEls.status.textContent = text;
+          subEls.status.className = 'modal-status' + (type ? ' ' + type : '');
         }
 
         async function subscribe() {
           const url = subEls.urlInput.value.trim();
           const type = getType();
           if (!url) {
-            subEls.status.textContent = '请输入 Webhook URL';
+            setStatus('请输入 Webhook URL', 'error');
             return;
           }
-          subEls.status.textContent = '订阅中...';
+          setStatus('订阅中...');
           try {
             const res = await fetch(`${API_BASE}/api/subscribe`, {
               method: 'POST',
@@ -537,19 +792,19 @@
             const data = await res.json();
             if (data.success) {
               setSub({ url, type });
-              subEls.status.textContent = '订阅成功！';
+              setStatus('订阅成功！', 'success');
             } else {
-              subEls.status.textContent = '订阅失败: ' + (data.error || '未知错误');
+              setStatus('订阅失败: ' + (data.error || '未知错误'), 'error');
             }
           } catch (e) {
-            subEls.status.textContent = '网络错误，请重试';
+            setStatus('网络错误，请重试', 'error');
           }
         }
 
         async function unsubscribe() {
           const sub = getSub();
           if (!sub) return;
-          subEls.status.textContent = '取消订阅中...';
+          setStatus('取消订阅中...');
           try {
             const res = await fetch(`${API_BASE}/api/unsubscribe`, {
               method: 'POST',
@@ -559,21 +814,21 @@
             const data = await res.json();
             if (data.success) {
               localStorage.removeItem(STORAGE_KEY);
-              updateUI();
               subEls.urlInput.value = '';
-              subEls.status.textContent = '已取消订阅';
+              updateUI();
+              setStatus('已取消订阅', 'success');
             } else {
-              subEls.status.textContent = '取消失败: ' + (data.error || '未知错误');
+              setStatus('取消失败: ' + (data.error || '未知错误'), 'error');
             }
           } catch (e) {
-            subEls.status.textContent = '网络错误，请重试';
+            setStatus('网络错误，请重试', 'error');
           }
         }
 
         async function testSend() {
           const sub = getSub();
           if (!sub) return;
-          subEls.status.textContent = '发送测试中...';
+          setStatus('发送测试中...');
           const testPayload = sub.type === 'feishu'
             ? { msg_type: 'text', content: { text: 'QDII-Watch 测试消息\n\n如果您收到这条消息，说明 webhook 配置正确。' } }
             : sub.type === 'dingtalk'
@@ -587,12 +842,12 @@
               body: JSON.stringify(testPayload),
             });
             if (whRes.ok) {
-              subEls.status.textContent = '测试消息已发送，请检查您的机器人';
+              setStatus('测试消息已发送，请检查您的机器人', 'success');
             } else {
-              subEls.status.textContent = '测试发送失败: HTTP ' + whRes.status;
+              setStatus('测试发送失败: HTTP ' + whRes.status, 'error');
             }
           } catch (e) {
-            subEls.status.textContent = '测试发送失败: 网络错误';
+            setStatus('测试发送失败: 网络错误', 'error');
           }
         }
 
