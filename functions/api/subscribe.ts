@@ -5,6 +5,20 @@ const ALLOWED_DOMAINS = [
   'oapi.dingtalk.com',
 ];
 
+async function verifyTurnstile(token: string, secret: string): Promise<boolean> {
+  try {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret, response: token }),
+    });
+    const data = await res.json() as { success: boolean };
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
+
 function isAllowedDomain(url: string): boolean {
   try {
     const hostname = new URL(url).hostname;
@@ -16,7 +30,7 @@ function isAllowedDomain(url: string): boolean {
   }
 }
 
-export const onRequestPost: PagesFunction<{ SUBSCRIPTIONS: KVNamespace }> = async (context) => {
+export const onRequestPost: PagesFunction<{ SUBSCRIPTIONS: KVNamespace; TURNSTILE_SECRET: string }> = async (context) => {
   const { request, env } = context;
 
   let body: Record<string, unknown>;
@@ -25,6 +39,14 @@ export const onRequestPost: PagesFunction<{ SUBSCRIPTIONS: KVNamespace }> = asyn
   } catch {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
       status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  const turnstileToken = typeof body.turnstileToken === 'string' ? body.turnstileToken : '';
+  if (!turnstileToken || !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET))) {
+    return new Response(JSON.stringify({ error: 'CAPTCHA verification failed' }), {
+      status: 403,
       headers: { 'Content-Type': 'application/json' },
     });
   }

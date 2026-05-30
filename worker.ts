@@ -6,6 +6,7 @@ interface Env {
   ASSETS: Fetcher;
   NOTIFY_TOKEN: string;
   SUBSCRIPTIONS: KVNamespace;
+  TURNSTILE_SECRET: string;
 }
 
 function invoke(

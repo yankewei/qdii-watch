@@ -1,6 +1,20 @@
 import type { WebhookSubscription } from '../_shared/types.js';
 
-export const onRequestPost: PagesFunction<{ SUBSCRIPTIONS: KVNamespace }> = async (context) => {
+async function verifyTurnstile(token: string, secret: string): Promise<boolean> {
+  try {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret, response: token }),
+    });
+    const data = await res.json() as { success: boolean };
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
+
+export const onRequestPost: PagesFunction<{ SUBSCRIPTIONS: KVNamespace; TURNSTILE_SECRET: string }> = async (context) => {
   const { request, env } = context;
 
   let body: Record<string, unknown>;
@@ -9,6 +23,14 @@ export const onRequestPost: PagesFunction<{ SUBSCRIPTIONS: KVNamespace }> = asyn
   } catch {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
       status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  const turnstileToken = typeof body.turnstileToken === 'string' ? body.turnstileToken : '';
+  if (!turnstileToken || !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET))) {
+    return new Response(JSON.stringify({ error: 'CAPTCHA verification failed' }), {
+      status: 403,
       headers: { 'Content-Type': 'application/json' },
     });
   }

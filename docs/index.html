@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QDII-Watch | 纳斯达克100 ETF联接基金限额监控</title>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -520,6 +521,7 @@
           </div>
           <label class="form-label" for="webhookUrl">Webhook URL</label>
           <input type="text" id="webhookUrl" class="form-input" placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/xxx">
+          <div id="turnstileContainer" style="margin-top: 14px; display: flex; justify-content: center;"></div>
           <div class="modal-actions">
             <button id="subscribeBtn" class="btn-primary">订阅</button>
             <button id="testBtn" class="btn-secondary" style="display:none">测试发送</button>
@@ -691,10 +693,13 @@
       (function() {
         const API_BASE = '';
         const STORAGE_KEY = 'qdii_notify_sub';
+        const TURNSTILE_SITE_KEY = '0x4AAAAAADZyqotHAJdmg2jh';
 
         const overlay = document.getElementById('modalOverlay');
         const trigger = document.getElementById('subscribeTrigger');
         const closeBtn = document.getElementById('modalClose');
+        const turnstileContainer = document.getElementById('turnstileContainer');
+        let turnstileWidgetId = null;
 
         const subEls = {
           urlInput: document.getElementById('webhookUrl'),
@@ -704,11 +709,40 @@
           status: document.getElementById('subscribeStatus'),
         };
 
+        function renderTurnstile() {
+          if (turnstileWidgetId !== null) return;
+          if (typeof turnstile === 'undefined') return;
+          turnstileWidgetId = turnstile.render('#turnstileContainer', {
+            sitekey: TURNSTILE_SITE_KEY,
+            theme: 'light',
+            size: 'normal',
+          });
+        }
+
+        function resetTurnstile() {
+          if (turnstileWidgetId !== null && typeof turnstile !== 'undefined') {
+            turnstile.reset(turnstileWidgetId);
+          }
+        }
+
+        function removeTurnstile() {
+          if (turnstileWidgetId !== null && typeof turnstile !== 'undefined') {
+            turnstile.remove(turnstileWidgetId);
+            turnstileWidgetId = null;
+          }
+        }
+
+        function getTurnstileToken() {
+          if (typeof turnstile === 'undefined') return null;
+          return turnstile.getResponse(turnstileWidgetId) || null;
+        }
+
         function openModal() {
           overlay.classList.add('open');
           trigger.classList.add('active');
           document.body.style.overflow = 'hidden';
           updateUI();
+          setTimeout(renderTurnstile, 100);
         }
         function closeModal() {
           overlay.classList.remove('open');
@@ -716,6 +750,7 @@
           document.body.style.overflow = '';
           subEls.status.textContent = '';
           subEls.status.className = 'modal-status';
+          removeTurnstile();
         }
 
         trigger.addEventListener('click', openModal);
@@ -778,8 +813,13 @@
         async function subscribe() {
           const url = subEls.urlInput.value.trim();
           const type = getType();
+          const turnstileToken = getTurnstileToken();
           if (!url) {
             setStatus('请输入 Webhook URL', 'error');
+            return;
+          }
+          if (!turnstileToken) {
+            setStatus('请完成人机验证', 'error');
             return;
           }
           setStatus('订阅中...');
@@ -787,29 +827,37 @@
             const res = await fetch(`${API_BASE}/api/subscribe`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ url, type }),
+              body: JSON.stringify({ url, type, turnstileToken }),
             });
             const data = await res.json();
             if (data.success) {
               setSub({ url, type });
               setStatus('订阅成功！', 'success');
+              resetTurnstile();
             } else {
               setStatus('订阅失败: ' + (data.error || '未知错误'), 'error');
+              resetTurnstile();
             }
           } catch (e) {
             setStatus('网络错误，请重试', 'error');
+            resetTurnstile();
           }
         }
 
         async function unsubscribe() {
           const sub = getSub();
           if (!sub) return;
+          const turnstileToken = getTurnstileToken();
+          if (!turnstileToken) {
+            setStatus('请完成人机验证', 'error');
+            return;
+          }
           setStatus('取消订阅中...');
           try {
             const res = await fetch(`${API_BASE}/api/unsubscribe`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ url: sub.url }),
+              body: JSON.stringify({ url: sub.url, turnstileToken }),
             });
             const data = await res.json();
             if (data.success) {
@@ -817,11 +865,14 @@
               subEls.urlInput.value = '';
               updateUI();
               setStatus('已取消订阅', 'success');
+              resetTurnstile();
             } else {
               setStatus('取消失败: ' + (data.error || '未知错误'), 'error');
+              resetTurnstile();
             }
           } catch (e) {
             setStatus('网络错误，请重试', 'error');
+            resetTurnstile();
           }
         }
 
