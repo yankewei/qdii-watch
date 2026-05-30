@@ -1,6 +1,7 @@
 import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import * as path from 'path';
+import { detectChanges } from './functions/_shared/diff.js';
 
 interface Fund {
   code: string;
@@ -156,9 +157,35 @@ async function main() {
   };
 
   const outDir = path.join(process.cwd(), 'docs', 'data');
+
+  // 变化检测
+  let changes = [];
+  const oldFile = path.join(outDir, 'funds.json');
+  if (fs.existsSync(oldFile)) {
+    try {
+      const oldData = JSON.parse(fs.readFileSync(oldFile, 'utf-8'));
+      const oldFunds = oldData.funds || [];
+      changes = detectChanges(oldFunds, results);
+      if (changes.length > 0) {
+        console.log(`\n检测到 ${changes.length} 只基金发生变化:`);
+        changes.forEach((c: any) => {
+          console.log(`  [${c.code}] ${c.name}: ${c.old.status}/${c.old.limitAmount} → ${c.new.status}/${c.new.limitAmount}`);
+        });
+      }
+    } catch (e) {
+      console.error('读取旧数据失败:', e);
+    }
+  }
   fs.mkdirSync(outDir, { recursive: true });
   const outFile = path.join(outDir, 'funds.json');
   fs.writeFileSync(outFile, JSON.stringify(data, null, 2), 'utf-8');
+
+  // 如果有变化，写入 changes.json 供 GitHub Actions 使用
+  if (changes.length > 0) {
+    const changesFile = path.join(outDir, 'changes.json');
+    fs.writeFileSync(changesFile, JSON.stringify({ changes }, null, 2), 'utf-8');
+    console.log(`变化详情已保存: ${changesFile}`);
+  }
 
   console.log(`\n数据已保存: ${outFile}`);
   console.log(`更新时间: ${data.updatedAt}`);
