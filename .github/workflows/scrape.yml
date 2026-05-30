@@ -34,13 +34,26 @@ jobs:
         run: npx tsx scraper.ts
 
       - name: Commit and push if changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/funds.json
+          git add docs/data/
           if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
             echo "No changes to commit"
           else
+            echo "changed=true" >> $GITHUB_OUTPUT
             git commit -m "Update fund limits data [$(date -u +'%Y-%m-%d %H:%M UTC')]"
             git push
+          fi
+
+      - name: Trigger notifications
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          if [ -f docs/data/changes.json ]; then
+            curl -X POST "${{ vars.PAGES_URL }}/api/notify" \
+              -H "Authorization: Bearer ${{ secrets.NOTIFY_TOKEN }}" \
+              -H "Content-Type: application/json" \
+              -d @docs/data/changes.json
           fi
