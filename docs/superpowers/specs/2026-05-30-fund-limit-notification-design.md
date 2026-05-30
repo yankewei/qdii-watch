@@ -182,24 +182,52 @@ Content-Type: application/json
 
 ## 消息格式
 
-### 飞书（text 类型）
+飞书和钉钉均采用**卡片/富文本**格式，视觉效果优于纯文本。
+
+### 飞书（interactive 卡片）
 
 ```json
 {
-  "msg_type": "text",
-  "content": {
-    "text": "QDII-Watch 限额变动提醒\n\n📉 南方纳斯达克100指数发起(QDII)A\n   状态：限额 200元 → 暂停申购\n\n📉 招商纳斯达克100ETF发起式联接(QDII)A\n   限额：100元 → 50元\n\n更新时间：2026-05-30 15:30\n详情：https://qdii-watch.xxx.pages.dev"
+  "msg_type": "interactive",
+  "card": {
+    "header": {
+      "title": { "tag": "plain_text", "content": "QDII-Watch 限额变动提醒" },
+      "template": "blue"
+    },
+    "elements": [
+      {
+        "tag": "div",
+        "text": {
+          "tag": "lark_md",
+          "content": "**南方纳斯达克100指数发起(QDII)A**\n状态：限额 200元 → 暂停申购"
+        }
+      },
+      {
+        "tag": "div",
+        "text": {
+          "tag": "lark_md",
+          "content": "**招商纳斯达克100ETF发起式联接(QDII)A**\n限额：100元 → 50元"
+        }
+      },
+      {
+        "tag": "note",
+        "elements": [
+          { "tag": "plain_text", "content": "更新时间：2026-05-30 15:30" }
+        ]
+      }
+    ]
   }
 }
 ```
 
-### 钉钉（text 类型）
+### 钉钉（markdown 卡片）
 
 ```json
 {
-  "msg_type": "text",
-  "text": {
-    "content": "QDII-Watch 限额变动提醒\n\n📉 南方纳斯达克100指数发起(QDII)A\n   状态：限额 200元 → 暂停申购\n\n📉 招商纳斯达克100ETF发起式联接(QDII)A\n   限额：100元 → 50元\n\n更新时间：2026-05-30 15:30\n详情：https://qdii-watch.xxx.pages.dev"
+  "msgtype": "markdown",
+  "markdown": {
+    "title": "QDII-Watch 限额变动提醒",
+    "text": "#### QDII-Watch 限额变动提醒\n\n**南方纳斯达克100指数发起(QDII)A**\n> 状态：限额 200元 → 暂停申购\n\n**招商纳斯达克100ETF发起式联接(QDII)A**\n> 限额：100元 → 50元\n\n---\n更新时间：2026-05-30 15:30\n[查看详情](https://qdii-watch.xxx.pages.dev)"
   }
 }
 ```
