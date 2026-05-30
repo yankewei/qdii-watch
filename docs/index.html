@@ -116,6 +116,11 @@
       overflow: hidden;
     }
 
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -141,14 +146,23 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.03em;
-      cursor: pointer;
       user-select: none;
       white-space: nowrap;
     }
 
     th:hover { background: #f3f4f6; }
-    th .sort-arrow { margin-left: 4px; opacity: 0.4; }
-    th.sorted .sort-arrow { opacity: 1; }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
 
     tbody tr:hover { background: #fafafa; }
     tbody tr:last-child td { border-bottom: none; }
@@ -194,13 +208,26 @@
       font-weight: 400;
     }
 
-    .loading, .error {
+    .loading, .empty, .error {
       text-align: center;
       padding: 60px 20px;
       color: var(--text-secondary);
     }
 
     .error { color: var(--danger); }
+
+    .spinner {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      border: 3px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 12px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     .footer {
       text-align: center;
@@ -228,36 +255,71 @@
       <p>纳斯达克100 ETF联接基金 申购限额监控</p>
     </header>
 
-    <div class="update-time" id="updateTime">加载中...</div>
+    <main>
+      <div class="update-time" id="updateTime">加载中...</div>
 
     <div class="stats-bar" id="statsBar"></div>
 
     <div class="filters">
-      <input type="text" id="searchInput" placeholder="搜索基金名称 / 代码 / 公司..." />
-      <select id="statusFilter">
+      <label for="searchInput" class="visually-hidden">搜索</label>
+      <input type="text" id="searchInput" placeholder="搜索基金名称 / 代码 / 公司..." aria-label="搜索基金" />
+      <label for="statusFilter" class="visually-hidden">状态筛选</label>
+      <select id="statusFilter" aria-label="按状态筛选">
         <option value="">全部状态</option>
         <option value="open">开放申购</option>
         <option value="limited">限额</option>
         <option value="suspended">暂停申购</option>
       </select>
-      <select id="sortSelect">
-        <option value="default">默认排序</option>
+      <label for="sortSelect" class="visually-hidden">排序方式</label>
+      <select id="sortSelect" aria-label="排序方式">
+        <option value="limit-desc" selected>限额 ↓（高到低）</option>
         <option value="limit-asc">限额 ↑（低到高）</option>
-        <option value="limit-desc">限额 ↓（高到低）</option>
         <option value="name">名称</option>
       </select>
     </div>
 
-    <div class="card">
+    <div class="card table-wrap">
       <div id="tableContainer">
-        <div class="loading">正在加载数据...</div>
+        <div class="loading"><div class="spinner" aria-hidden="true"></div><div>正在加载数据...</div></div>
       </div>
     </div>
 
-    <div class="footer">
+    <div class="card" style="margin-top: 20px; padding: 16px;">
+      <h2 style="font-size: 1.1rem; margin-bottom: 12px;">📬 订阅限额变动通知</h2>
+      <div id="subscribeForm">
+        <div style="margin-bottom: 10px;">
+          <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">通知方式</label>
+          <div style="display: flex; gap: 16px;">
+            <label style="font-size: 0.9rem; cursor: pointer;">
+              <input type="radio" name="notifyType" value="feishu" checked> 飞书
+            </label>
+            <label style="font-size: 0.9rem; cursor: pointer;">
+              <input type="radio" name="notifyType" value="dingtalk"> 钉钉
+            </label>
+            <label style="font-size: 0.9rem; cursor: pointer;">
+              <input type="radio" name="notifyType" value="webhook"> 通用 Webhook
+            </label>
+          </div>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">Webhook URL</label>
+          <input type="text" id="webhookUrl" placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/xxx" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem;">
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button id="subscribeBtn" style="padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 0.9rem; cursor: pointer;">订阅</button>
+          <button id="testBtn" style="padding: 8px 16px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; cursor: pointer; display: none;">测试发送</button>
+          <button id="unsubscribeBtn" style="padding: 8px 16px; background: #fee2e2; color: #991b1b; border: none; border-radius: 8px; font-size: 0.9rem; cursor: pointer; display: none;">取消订阅</button>
+        </div>
+        <div id="subscribeStatus" style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);"></div>
+      </div>
+    </div>
+
+    </main>
+
+    <footer class="footer">
       数据来源于天天基金网，仅供参考，不构成投资建议。<br>
       <a href="https://github.com/yankewei/qdii-watch" target="_blank">GitHub</a>
-    </div>
+    </footer>
   </div>
 
   <script>
@@ -308,7 +370,7 @@
 
       function renderTable(funds) {
         if (!funds.length) {
-          els.tableContainer.innerHTML = '<div class="error">无匹配数据</div>';
+          els.tableContainer.innerHTML = '<div class="empty">无匹配数据</div>';
           return;
         }
 
@@ -408,6 +470,138 @@
       els.searchInput.addEventListener('input', applyFilters);
       els.statusFilter.addEventListener('change', applyFilters);
       els.sortSelect.addEventListener('change', applyFilters);
+
+      // Subscription panel
+      (function() {
+        const API_BASE = '';
+        const STORAGE_KEY = 'qdii_notify_sub';
+
+        const subEls = {
+          urlInput: document.getElementById('webhookUrl'),
+          subscribeBtn: document.getElementById('subscribeBtn'),
+          testBtn: document.getElementById('testBtn'),
+          unsubscribeBtn: document.getElementById('unsubscribeBtn'),
+          status: document.getElementById('subscribeStatus'),
+        };
+
+        function getType() {
+          const checked = document.querySelector('input[name="notifyType"]:checked');
+          return checked ? checked.value : 'feishu';
+        }
+
+        function getSub() {
+          try {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+          } catch {
+            return null;
+          }
+        }
+
+        function setSub(sub) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(sub));
+          updateUI();
+        }
+
+        function updateUI() {
+          const sub = getSub();
+          if (sub) {
+            subEls.urlInput.value = sub.url;
+            const radios = document.querySelectorAll('input[name="notifyType"]');
+            radios.forEach(r => { if (r.value === sub.type) r.checked = true; });
+            subEls.subscribeBtn.style.display = 'none';
+            subEls.testBtn.style.display = 'inline-block';
+            subEls.unsubscribeBtn.style.display = 'inline-block';
+            subEls.status.textContent = '已订阅 ' + (sub.type === 'feishu' ? '飞书' : sub.type === 'dingtalk' ? '钉钉' : '通用 Webhook');
+          } else {
+            subEls.subscribeBtn.style.display = 'inline-block';
+            subEls.testBtn.style.display = 'none';
+            subEls.unsubscribeBtn.style.display = 'none';
+            subEls.status.textContent = '';
+          }
+        }
+
+        async function subscribe() {
+          const url = subEls.urlInput.value.trim();
+          const type = getType();
+          if (!url) {
+            subEls.status.textContent = '请输入 Webhook URL';
+            return;
+          }
+          subEls.status.textContent = '订阅中...';
+          try {
+            const res = await fetch(`${API_BASE}/api/subscribe`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ url, type }),
+            });
+            const data = await res.json();
+            if (data.success) {
+              setSub({ url, type });
+              subEls.status.textContent = '订阅成功！';
+            } else {
+              subEls.status.textContent = '订阅失败: ' + (data.error || '未知错误');
+            }
+          } catch (e) {
+            subEls.status.textContent = '网络错误，请重试';
+          }
+        }
+
+        async function unsubscribe() {
+          const sub = getSub();
+          if (!sub) return;
+          subEls.status.textContent = '取消订阅中...';
+          try {
+            const res = await fetch(`${API_BASE}/api/unsubscribe`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ url: sub.url }),
+            });
+            const data = await res.json();
+            if (data.success) {
+              localStorage.removeItem(STORAGE_KEY);
+              updateUI();
+              subEls.urlInput.value = '';
+              subEls.status.textContent = '已取消订阅';
+            } else {
+              subEls.status.textContent = '取消失败: ' + (data.error || '未知错误');
+            }
+          } catch (e) {
+            subEls.status.textContent = '网络错误，请重试';
+          }
+        }
+
+        async function testSend() {
+          const sub = getSub();
+          if (!sub) return;
+          subEls.status.textContent = '发送测试中...';
+          const testPayload = sub.type === 'feishu'
+            ? { msg_type: 'text', content: { text: 'QDII-Watch 测试消息\n\n如果您收到这条消息，说明 webhook 配置正确。' } }
+            : sub.type === 'dingtalk'
+            ? { msgtype: 'text', text: { content: 'QDII-Watch 测试消息\n\n如果您收到这条消息，说明 webhook 配置正确。' } }
+            : { title: 'QDII-Watch 测试', message: '如果您收到这条消息，说明 webhook 配置正确。' };
+
+          try {
+            const whRes = await fetch(sub.url, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(testPayload),
+            });
+            if (whRes.ok) {
+              subEls.status.textContent = '测试消息已发送，请检查您的机器人';
+            } else {
+              subEls.status.textContent = '测试发送失败: HTTP ' + whRes.status;
+            }
+          } catch (e) {
+            subEls.status.textContent = '测试发送失败: 网络错误';
+          }
+        }
+
+        subEls.subscribeBtn.addEventListener('click', subscribe);
+        subEls.unsubscribeBtn.addEventListener('click', unsubscribe);
+        subEls.testBtn.addEventListener('click', testSend);
+
+        updateUI();
+      })();
 
       load();
     })();
