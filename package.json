@@ -1,0 +1,15 @@
+{
+  "name": "qdii-watch",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "scrape": "tsx scraper.ts",
+    "dev": "cd docs && python3 -m http.server 8080"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0"
+  }
+}

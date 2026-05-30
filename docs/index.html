@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QDII-Watch | 纳斯达克100 ETF联接基金限额监控</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --text: #1a1a2e;
+      --text-secondary: #6b7280;
+      --border: #e5e7eb;
+      --primary: #2563eb;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .update-time {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      justify-content: center;
+    }
+
+    .filters input,
+    .filters select {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .filters input { flex: 1; min-width: 160px; max-width: 300px; }
+    .filters input::placeholder { color: #9ca3af; }
+
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .stat-chip .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+
+    .dot-open { background: var(--success); }
+    .dot-limited { background: var(--warning); }
+    .dot-suspended { background: var(--danger); }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    thead {
+      background: #f9fafb;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    th:hover { background: #f3f4f6; }
+    th .sort-arrow { margin-left: 4px; opacity: 0.4; }
+    th.sorted .sort-arrow { opacity: 1; }
+
+    tbody tr:hover { background: #fafafa; }
+    tbody tr:last-child td { border-bottom: none; }
+
+    .fund-name {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .fund-code {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-family: "SF Mono", Monaco, monospace;
+    }
+
+    .company {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .badge-open { background: #dcfce7; color: #166534; }
+    .badge-limited { background: #fef3c7; color: #92400e; }
+    .badge-suspended { background: #fee2e2; color: #991b1b; }
+    .badge-error { background: #f3f4f6; color: #6b7280; }
+    .badge-unknown { background: #f3f4f6; color: #6b7280; }
+
+    .limit-amount {
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .limit-amount.na {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .loading, .error {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-secondary);
+    }
+
+    .error { color: var(--danger); }
+
+    .footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .footer a { color: #9ca3af; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      body { padding: 12px; }
+      header h1 { font-size: 1.3rem; }
+      th, td { padding: 10px; }
+      .hide-mobile { display: none; }
+      .fund-name { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>QDII-Watch</h1>
+      <p>纳斯达克100 ETF联接基金 申购限额监控</p>
+    </header>
+
+    <div class="update-time" id="updateTime">加载中...</div>
+
+    <div class="stats-bar" id="statsBar"></div>
+
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="搜索基金名称 / 代码 / 公司..." />
+      <select id="statusFilter">
+        <option value="">全部状态</option>
+        <option value="open">开放申购</option>
+        <option value="limited">限额</option>
+        <option value="suspended">暂停申购</option>
+      </select>
+      <select id="sortSelect">
+        <option value="default">默认排序</option>
+        <option value="limit-asc">限额 ↑（低到高）</option>
+        <option value="limit-desc">限额 ↓（高到低）</option>
+        <option value="name">名称</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <div id="tableContainer">
+        <div class="loading">正在加载数据...</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      数据来源于天天基金网，仅供参考，不构成投资建议。<br>
+      <a href="https://github.com/yankewei/qdii-watch" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const DATA_URL = './data/funds.json';
+
+      let allFunds = [];
+      let currentSort = { key: 'default', asc: true };
+
+      const els = {
+        updateTime: document.getElementById('updateTime'),
+        statsBar: document.getElementById('statsBar'),
+        tableContainer: document.getElementById('tableContainer'),
+        searchInput: document.getElementById('searchInput'),
+        statusFilter: document.getElementById('statusFilter'),
+        sortSelect: document.getElementById('sortSelect'),
+      };
+
+      function formatTimeAgo(iso) {
+        const d = new Date(iso);
+        const now = new Date();
+        const diff = Math.floor((now - d) / 1000);
+        if (diff < 60) return '刚刚';
+        if (diff < 3600) return Math.floor(diff / 60) + ' 分钟前';
+        if (diff < 86400) return Math.floor(diff / 3600) + ' 小时前';
+        return Math.floor(diff / 86400) + ' 天前';
+      }
+
+      function formatDateTime(iso) {
+        const d = new Date(iso);
+        return d.toLocaleString('zh-CN', {
+          year: 'numeric', month: '2-digit', day: '2-digit',
+          hour: '2-digit', minute: '2-digit', second: '2-digit',
+          hour12: false,
+        });
+      }
+
+      function statusLabel(s) {
+        const map = {
+          open: { text: '开放申购', cls: 'badge-open' },
+          limited: { text: '限额', cls: 'badge-limited' },
+          suspended: { text: '暂停申购', cls: 'badge-suspended' },
+          error: { text: '获取失败', cls: 'badge-error' },
+          unknown: { text: '未知', cls: 'badge-unknown' },
+        };
+        return map[s] || map.unknown;
+      }
+
+      function renderTable(funds) {
+        if (!funds.length) {
+          els.tableContainer.innerHTML = '<div class="error">无匹配数据</div>';
+          return;
+        }
+
+        const rows = funds.map(f => {
+          const st = statusLabel(f.status);
+          const limit = f.limitAmount != null
+            ? `<span class="limit-amount">${f.limitAmount.toLocaleString()} 元</span>`
+            : '<span class="limit-amount na">—</span>';
+
+          return `<tr>
+            <td>
+              <div class="fund-name">${escapeHtml(f.name)}</div>
+              <div class="fund-code">${f.code}</div>
+            </td>
+            <td class="hide-mobile company">${escapeHtml(f.company)}</td>
+            <td><span class="badge ${st.cls}">${st.text}</span></td>
+            <td style="text-align:right">${limit}</td>
+          </tr>`;
+        }).join('');
+
+        els.tableContainer.innerHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th>基金名称</th>
+                <th class="hide-mobile">基金公司</th>
+                <th>状态</th>
+                <th style="text-align:right">日累计限额</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>`;
+      }
+
+      function escapeHtml(s) {
+        const d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+      }
+
+      function renderStats(funds) {
+        const counts = {};
+        funds.forEach(f => { counts[f.status] = (counts[f.status] || 0) + 1; });
+
+        const items = [
+          { k: 'open', label: '开放', cls: 'dot-open' },
+          { k: 'limited', label: '限额', cls: 'dot-limited' },
+          { k: 'suspended', label: '暂停', cls: 'dot-suspended' },
+        ];
+
+        els.statsBar.innerHTML = items.map(it => {
+          const c = counts[it.k] || 0;
+          return `<div class="stat-chip"><span class="dot ${it.cls}"></span>${it.label} ${c}</div>`;
+        }).join('');
+      }
+
+      function applyFilters() {
+        const q = els.searchInput.value.trim().toLowerCase();
+        const status = els.statusFilter.value;
+        const sort = els.sortSelect.value;
+
+        let result = allFunds.filter(f => {
+          if (status && f.status !== status) return false;
+          if (!q) return true;
+          const hay = (f.name + f.code + f.company).toLowerCase();
+          return hay.includes(q);
+        });
+
+        if (sort === 'limit-asc') {
+          result.sort((a, b) => (a.limitAmount ?? Infinity) - (b.limitAmount ?? Infinity));
+        } else if (sort === 'limit-desc') {
+          result.sort((a, b) => (b.limitAmount ?? -Infinity) - (a.limitAmount ?? -Infinity));
+        } else if (sort === 'name') {
+          result.sort((a, b) => a.name.localeCompare(b.name, 'zh-CN'));
+        }
+
+        renderTable(result);
+      }
+
+      async function load() {
+        try {
+          const resp = await fetch(DATA_URL, { cache: 'no-store' });
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+          const data = await resp.json();
+
+          allFunds = data.funds || [];
+          els.updateTime.textContent = `数据更新于 ${formatTimeAgo(data.updatedAt)} (${formatDateTime(data.updatedAt)})`;
+
+          renderStats(allFunds);
+          applyFilters();
+        } catch (e) {
+          console.error(e);
+          els.tableContainer.innerHTML = `<div class="error">数据加载失败，请稍后刷新重试。<br><small>${escapeHtml(e.message)}</small></div>`;
+        }
+      }
+
+      els.searchInput.addEventListener('input', applyFilters);
+      els.statusFilter.addEventListener('change', applyFilters);
+      els.sortSelect.addEventListener('change', applyFilters);
+
+      load();
+    })();
+  </script>
+</body>
+</html>
