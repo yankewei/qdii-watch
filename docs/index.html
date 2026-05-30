@@ -833,7 +833,7 @@
             if (data.success) {
               setSub({ url, type });
               setStatus('订阅成功！', 'success');
-              resetTurnstile();
+              removeTurnstile();
             } else {
               setStatus('订阅失败: ' + (data.error || '未知错误'), 'error');
               resetTurnstile();
@@ -865,7 +865,7 @@
               subEls.urlInput.value = '';
               updateUI();
               setStatus('已取消订阅', 'success');
-              resetTurnstile();
+              removeTurnstile();
             } else {
               setStatus('取消失败: ' + (data.error || '未知错误'), 'error');
               resetTurnstile();
