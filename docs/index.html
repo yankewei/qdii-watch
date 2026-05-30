@@ -320,7 +320,7 @@
 
           return `<tr>
             <td>
-              <div class="fund-name">${escapeHtml(f.name)}</div>
+              <div class="fund-name"><a href="https://fund.eastmoney.com/${f.code}.html" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">${escapeHtml(f.name)}</a></div>
               <div class="fund-code">${f.code}</div>
             </td>
             <td class="hide-mobile company">${escapeHtml(f.company)}</td>
