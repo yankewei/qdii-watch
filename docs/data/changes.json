@@ -5,12 +5,12 @@
       "name": "广发纳指100ETF联接(QDII)A",
       "company": "广发基金",
       "old": {
-        "status": "limited",
-        "limitAmount": 10
-      },
-      "new": {
         "status": "error",
         "limitAmount": null
+      },
+      "new": {
+        "status": "limited",
+        "limitAmount": 10
       }
     },
     {
@@ -18,12 +18,12 @@
       "name": "华安纳斯达克100ETF联接(QDII)A",
       "company": "华安基金",
       "old": {
-        "status": "limited",
-        "limitAmount": 10
-      },
-      "new": {
         "status": "error",
         "limitAmount": null
+      },
+      "new": {
+        "status": "limited",
+        "limitAmount": 10
       }
     }
   ]
