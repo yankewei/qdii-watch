@@ -4,7 +4,7 @@
 
 ## 在线访问
 
-部署后访问：`https://qdii-watch.r9bs9sftjf.workers.dev`
+部署后访问：`https://qdii-watch.yankewei.site`
 
 ## 功能
 
