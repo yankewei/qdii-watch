@@ -3,8 +3,7 @@
 监控中国大陆纳斯达克100 ETF联接基金（QDII）的申购限额情况。
 
 ## 在线访问
-
-部署后访问：`https://qdii-watch.yankewei.site`
+`https://qdii-watch.yankewei.site`
 
 ## 功能
 
