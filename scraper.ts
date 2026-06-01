@@ -2,6 +2,7 @@ import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import * as path from 'path';
 import { detectChanges } from './functions/_shared/diff.js';
+import { withRetry } from './functions/_shared/retry.js';
 
 interface Fund {
   code: string;
@@ -50,13 +51,22 @@ const HEADERS = {
 };
 
 async function fetchFundPage(code: string): Promise<string | null> {
-  const url = `https://fundf10.eastmoney.com/jjfl_${code}.html`;
   try {
-    const res = await fetch(url, { headers: HEADERS });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.text();
+    return await withRetry(async () => {
+      const url = `https://fundf10.eastmoney.com/jjfl_${code}.html`;
+      const res = await fetch(url, { headers: HEADERS });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.text();
+    }, {
+      maxRetries: 2,
+      baseDelayMs: 800,
+      shouldRetry: (err) => {
+        const msg = err instanceof Error ? err.message : String(err);
+        return /HTTP|fetch|timeout|network|ECONNRESET|ETIMEDOUT/i.test(msg);
+      },
+    });
   } catch (e) {
-    console.error(`[${code}] fetch error:`, e);
+    console.error(`[${code}] fetch error after retries:`, e);
     return null;
   }
 }
@@ -126,9 +136,14 @@ async function fetchReturnRates(codes: string[]): Promise<Map<string, { weekly: 
     const url = `https://fundf10.eastmoney.com/FundArchivesDatas.aspx?type=jdzf&code=${code}&per=1`;
 
     try {
-      const res = await fetch(url, { headers: HEADERS });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const text = await res.text();
+      const text = await withRetry(async () => {
+        const res = await fetch(url, { headers: HEADERS });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.text();
+      }, {
+        maxRetries: 2,
+        baseDelayMs: 800,
+      });
 
       const fn = new Function(text + '; return apidata;');
       const data: { content: string } = fn();

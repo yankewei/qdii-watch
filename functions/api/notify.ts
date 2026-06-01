@@ -2,27 +2,36 @@ import type { FundChange, NotifyPayload, WebhookSubscription } from '../_shared/
 import { buildFeishuCard, buildDingtalkMarkdown, buildGenericPayload } from '../_shared/format.js';
 
 async function sendWebhook(url: string, body: unknown, timeoutMs = 10000): Promise<{ ok: boolean; error?: string }> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  let lastError: string | undefined;
 
-  try {
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-      signal: controller.signal,
-    });
-    clearTimeout(timeout);
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
-    if (!res.ok) {
-      return { ok: false, error: `HTTP ${res.status}` };
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+
+      if (!res.ok) {
+        return { ok: false, error: `HTTP ${res.status}` };
+      }
+      return { ok: true };
+    } catch (e) {
+      clearTimeout(timeout);
+      lastError = e instanceof Error ? e.message : String(e);
+      // 网络类错误重试一次
+      if (attempt === 0) {
+        await new Promise(r => setTimeout(r, 2000));
+      }
     }
-    return { ok: true };
-  } catch (e) {
-    clearTimeout(timeout);
-    const error = e instanceof Error ? e.message : String(e);
-    return { ok: false, error };
   }
+
+  return { ok: false, error: lastError };
 }
 
 function buildPayload(sub: WebhookSubscription, changes: FundChange[], updatedAt: string, siteUrl: string): unknown {
