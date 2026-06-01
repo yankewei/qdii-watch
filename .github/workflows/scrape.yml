@@ -31,7 +31,14 @@ jobs:
         run: npm ci
 
       - name: Run scraper
-        run: npx tsx scraper.ts
+        id: scrape
+        run: |
+          npx tsx scraper.ts
+          if node -e "const { changes } = require('./docs/data/changes.json'); process.exit(changes.length > 0 ? 0 : 1)"; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Commit and push if changed
         id: commit
@@ -49,7 +56,7 @@ jobs:
           fi
 
       - name: Trigger notifications
-        if: steps.commit.outputs.changed == 'true'
+        if: steps.scrape.outputs.has_changes == 'true'
         run: |
           if [ -f docs/data/changes.json ]; then
             curl -X POST "${{ vars.PAGES_URL }}/api/notify" \

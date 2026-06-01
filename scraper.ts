@@ -276,10 +276,10 @@ async function main() {
   const outFile = path.join(outDir, 'funds.json');
   fs.writeFileSync(outFile, JSON.stringify(data, null, 2), 'utf-8');
 
-  // 如果有变化，写入 changes.json 供 GitHub Actions 使用
+  // 始终写入本轮变化，避免 GitHub Actions 重复发送上一次的告警
+  const changesFile = path.join(outDir, 'changes.json');
+  fs.writeFileSync(changesFile, JSON.stringify({ changes }, null, 2), 'utf-8');
   if (changes.length > 0) {
-    const changesFile = path.join(outDir, 'changes.json');
-    fs.writeFileSync(changesFile, JSON.stringify({ changes }, null, 2), 'utf-8');
     console.log(`变化详情已保存: ${changesFile}`);
   }
 

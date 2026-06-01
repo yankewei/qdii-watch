@@ -7,6 +7,7 @@ export function detectChanges(oldFunds: FundData[], newFunds: FundData[]): FundC
   for (const nf of newFunds) {
     const of = oldMap.get(nf.code);
     if (!of) continue;
+    if (of.status === 'error' || nf.status === 'error') continue;
 
     if (of.status !== nf.status || of.limitAmount !== nf.limitAmount) {
       changes.push({

@@ -36,6 +36,26 @@ describe('detectChanges', () => {
     expect(changes[0].new.limitAmount).toBe(100);
   });
 
+  it('ignores scrape failures', () => {
+    const oldFunds: FundData[] = [
+      { code: '000001', name: 'Test Fund', company: 'Test', status: 'limited', limitAmount: 10 },
+    ];
+    const newFunds: FundData[] = [
+      { code: '000001', name: 'Test Fund', company: 'Test', status: 'error', limitAmount: null },
+    ];
+    expect(detectChanges(oldFunds, newFunds)).toEqual([]);
+  });
+
+  it('ignores recovery from scrape failures', () => {
+    const oldFunds: FundData[] = [
+      { code: '000001', name: 'Test Fund', company: 'Test', status: 'error', limitAmount: null },
+    ];
+    const newFunds: FundData[] = [
+      { code: '000001', name: 'Test Fund', company: 'Test', status: 'limited', limitAmount: 10 },
+    ];
+    expect(detectChanges(oldFunds, newFunds)).toEqual([]);
+  });
+
   it('ignores funds not in old data', () => {
     const oldFunds: FundData[] = [];
     const newFunds: FundData[] = [
