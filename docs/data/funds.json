@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-02T13:23:17.017Z",
+  "updatedAt": "2026-06-02T17:37:59.662Z",
   "fundCount": 17,
   "funds": [
     {
@@ -82,7 +82,7 @@
       "statusText": "限大额",
       "limitAmount": 100,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.91,
+      "weeklyReturn": 0.57,
       "monthlyReturn": 9.45,
       "yearlyReturn": 31.8
     },
