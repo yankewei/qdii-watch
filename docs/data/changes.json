@@ -1,3 +1,17 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "code": "000834",
+      "name": "大成纳斯达克100ETF联接(QDII)A",
+      "company": "大成基金",
+      "old": {
+        "status": "limited",
+        "limitAmount": 50
+      },
+      "new": {
+        "status": "limited",
+        "limitAmount": 10
+      }
+    }
+  ]
 }
