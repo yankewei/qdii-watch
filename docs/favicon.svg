@@ -1,0 +1,17 @@
+<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="192" y2="192">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="44" fill="url(#bg)"/>
+  <!-- 柱状图 -->
+  <rect x="54" y="102" width="14" height="32" rx="3" fill="#38bdf8" opacity="0.6"/>
+  <rect x="76" y="82" width="14" height="52" rx="3" fill="#38bdf8" opacity="0.8"/>
+  <rect x="98" y="66" width="14" height="68" rx="3" fill="#38bdf8"/>
+  <rect x="120" y="90" width="14" height="44" rx="3" fill="#38bdf8" opacity="0.7"/>
+  <!-- 监控眼睛轮廓 -->
+  <ellipse cx="96" cy="96" rx="40" ry="26" fill="none" stroke="#94a3b8" stroke-width="3.5" opacity="0.7"/>
+  <circle cx="96" cy="96" r="10" fill="#f8fafc"/>
+</svg>
