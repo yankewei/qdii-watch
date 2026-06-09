@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-09T05:27:26.616Z",
+  "updatedAt": "2026-06-09T09:17:07.835Z",
   "fundCount": 17,
   "funds": [
     {
@@ -39,6 +39,18 @@
       "yearlyReturn": 25.76
     },
     {
+      "code": "019547",
+      "name": "招商纳斯达克100ETF发起式联接(QDII)A",
+      "company": "招商基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 10,
+      "rawStatus": "限大额",
+      "weeklyReturn": -4.14,
+      "monthlyReturn": 4.71,
+      "yearlyReturn": 25.11
+    },
+    {
       "code": "019524",
       "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
       "company": "华泰柏瑞基金",
@@ -61,18 +73,6 @@
       "weeklyReturn": -4.26,
       "monthlyReturn": 4.49,
       "yearlyReturn": 24.47
-    },
-    {
-      "code": "019547",
-      "name": "招商纳斯达克100ETF发起式联接(QDII)A",
-      "company": "招商基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 100,
-      "rawStatus": "限大额",
-      "weeklyReturn": -4.14,
-      "monthlyReturn": 4.71,
-      "yearlyReturn": 25.11
     },
     {
       "code": "539001",
@@ -159,18 +159,6 @@
       "yearlyReturn": 24.95
     },
     {
-      "code": "160213",
-      "name": "国泰纳斯达克100指数(QDII)",
-      "company": "国泰基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": -4.54,
-      "monthlyReturn": 4.67,
-      "yearlyReturn": 26.7
-    },
-    {
       "code": "016055",
       "name": "博时纳斯达克100ETF发起式联接(QDII)A",
       "company": "博时基金",
@@ -190,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -4.27,
-      "monthlyReturn": 4.71,
-      "yearlyReturn": 24.99
+      "weeklyReturn": -3.33,
+      "monthlyReturn": 0.33,
+      "yearlyReturn": 25.76
     },
     {
       "code": "015299",
@@ -205,6 +193,18 @@
       "weeklyReturn": -4.18,
       "monthlyReturn": 4.56,
       "yearlyReturn": 25.59
+    },
+    {
+      "code": "160213",
+      "name": "国泰纳斯达克100指数(QDII)",
+      "company": "国泰基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": -4.54,
+      "monthlyReturn": 4.67,
+      "yearlyReturn": 26.7
     }
   ]
 }
