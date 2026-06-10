@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-10T05:36:48.948Z",
+  "updatedAt": "2026-06-10T09:19:56.026Z",
   "fundCount": 17,
   "funds": [
     {
@@ -63,6 +63,30 @@
       "yearlyReturn": 25.25
     },
     {
+      "code": "019172",
+      "name": "摩根纳斯达克100指数(QDII)A",
+      "company": "摩根基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 10,
+      "rawStatus": "限大额",
+      "weeklyReturn": -3.26,
+      "monthlyReturn": 0.24,
+      "yearlyReturn": 26.38
+    },
+    {
+      "code": "019736",
+      "name": "宝盈纳斯达克100指数发起(QDII)A",
+      "company": "宝盈基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 10,
+      "rawStatus": "限大额",
+      "weeklyReturn": -3.32,
+      "monthlyReturn": 0.23,
+      "yearlyReturn": 25.41
+    },
+    {
       "code": "019441",
       "name": "万家纳斯达克100指数发起式(QDII)A",
       "company": "万家基金",
@@ -97,30 +121,6 @@
       "weeklyReturn": -3.35,
       "monthlyReturn": 0.3,
       "yearlyReturn": 24.43
-    },
-    {
-      "code": "019172",
-      "name": "摩根纳斯达克100指数(QDII)A",
-      "company": "摩根基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 100,
-      "rawStatus": "限大额",
-      "weeklyReturn": -3.26,
-      "monthlyReturn": 0.24,
-      "yearlyReturn": 26.38
-    },
-    {
-      "code": "019736",
-      "name": "宝盈纳斯达克100指数发起(QDII)A",
-      "company": "宝盈基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 100,
-      "rawStatus": "限大额",
-      "weeklyReturn": -3.32,
-      "monthlyReturn": 0.23,
-      "yearlyReturn": 25.41
     },
     {
       "code": "016452",
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -3.33,
-      "monthlyReturn": 0.33,
-      "yearlyReturn": 25.76
+      "weeklyReturn": -4.9,
+      "monthlyReturn": -0.81,
+      "yearlyReturn": 24.12
     },
     {
       "code": "015299",
