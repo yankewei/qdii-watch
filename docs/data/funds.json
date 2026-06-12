@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T13:15:45.975Z",
+  "updatedAt": "2026-06-12T17:04:15.116Z",
   "fundCount": 17,
   "funds": [
     {
@@ -82,9 +82,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -6.39,
-      "monthlyReturn": -2.76,
-      "yearlyReturn": 20.73
+      "weeklyReturn": -3.03,
+      "monthlyReturn": 0.05,
+      "yearlyReturn": 24.98
     },
     {
       "code": "019441",
