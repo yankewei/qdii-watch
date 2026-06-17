@@ -1,3 +1,17 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "code": "016452",
+      "name": "南方纳斯达克100指数发起(QDII)A",
+      "company": "南方基金",
+      "old": {
+        "status": "limited",
+        "limitAmount": 200
+      },
+      "new": {
+        "status": "limited",
+        "limitAmount": 50
+      }
+    }
+  ]
 }

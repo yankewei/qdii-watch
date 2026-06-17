@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T05:44:34.154Z",
+  "updatedAt": "2026-06-17T09:43:56.921Z",
   "fundCount": 17,
   "funds": [
     {
@@ -87,6 +87,18 @@
       "yearlyReturn": 30.68
     },
     {
+      "code": "016452",
+      "name": "南方纳斯达克100指数发起(QDII)A",
+      "company": "南方基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 50,
+      "rawStatus": "限大额",
+      "weeklyReturn": 3.46,
+      "monthlyReturn": 4.19,
+      "yearlyReturn": 31.19
+    },
+    {
       "code": "019441",
       "name": "万家纳斯达克100指数发起式(QDII)A",
       "company": "万家基金",
@@ -121,18 +133,6 @@
       "weeklyReturn": 3.44,
       "monthlyReturn": 4.18,
       "yearlyReturn": 29.6
-    },
-    {
-      "code": "016452",
-      "name": "南方纳斯达克100指数发起(QDII)A",
-      "company": "南方基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 200,
-      "rawStatus": "限大额",
-      "weeklyReturn": 3.46,
-      "monthlyReturn": 4.19,
-      "yearlyReturn": 31.19
     },
     {
       "code": "018043",
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 3.51,
-      "monthlyReturn": 4.3,
-      "yearlyReturn": 31.05
+      "weeklyReturn": 2.86,
+      "monthlyReturn": 2.47,
+      "yearlyReturn": 27.01
     },
     {
       "code": "015299",
