@@ -1,19 +1,7 @@
 {
-  "updatedAt": "2026-06-22T13:57:54.731Z",
+  "updatedAt": "2026-06-22T17:35:16.964Z",
   "fundCount": 17,
   "funds": [
-    {
-      "code": "019441",
-      "name": "万家纳斯达克100指数发起式(QDII)A",
-      "company": "万家基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 1,
-      "rawStatus": "限大额",
-      "weeklyReturn": 3.04,
-      "monthlyReturn": 4.15,
-      "yearlyReturn": 29.47
-    },
     {
       "code": "270042",
       "name": "广发纳指100ETF联接(QDII)A",
@@ -109,6 +97,18 @@
       "weeklyReturn": 3.06,
       "monthlyReturn": 4.18,
       "yearlyReturn": 30.19
+    },
+    {
+      "code": "019441",
+      "name": "万家纳斯达克100指数发起式(QDII)A",
+      "company": "万家基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 50,
+      "rawStatus": "限大额",
+      "weeklyReturn": 3.04,
+      "monthlyReturn": 4.15,
+      "yearlyReturn": 29.47
     },
     {
       "code": "539001",
