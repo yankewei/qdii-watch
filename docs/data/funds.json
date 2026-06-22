@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T05:54:55.155Z",
+  "updatedAt": "2026-06-22T10:06:21.514Z",
   "fundCount": 17,
   "funds": [
     {
@@ -154,9 +154,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 3.84,
-      "monthlyReturn": 1.55,
-      "yearlyReturn": 27.09
+      "weeklyReturn": 3.07,
+      "monthlyReturn": 4.4,
+      "yearlyReturn": 30.1
     },
     {
       "code": "160213",
