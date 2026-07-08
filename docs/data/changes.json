@@ -1,17 +1,3 @@
 {
-  "changes": [
-    {
-      "code": "019441",
-      "name": "万家纳斯达克100指数发起式(QDII)A",
-      "company": "万家基金",
-      "old": {
-        "status": "limited",
-        "limitAmount": 50
-      },
-      "new": {
-        "status": "limited",
-        "limitAmount": 10
-      }
-    }
-  ]
+  "changes": []
 }
