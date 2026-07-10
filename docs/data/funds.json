@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T07:34:52.106Z",
+  "updatedAt": "2026-07-10T10:53:38.753Z",
   "fundCount": 17,
   "funds": [
     {
@@ -22,9 +22,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -1.84,
-      "monthlyReturn": -0.8,
-      "yearlyReturn": 21.69
+      "weeklyReturn": 1.28,
+      "monthlyReturn": 1.94,
+      "yearlyReturn": 22.68
     },
     {
       "code": "000834",
@@ -58,9 +58,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -1.71,
-      "monthlyReturn": -0.59,
-      "yearlyReturn": 20.7
+      "weeklyReturn": 1.22,
+      "monthlyReturn": 1.98,
+      "yearlyReturn": 21.66
     },
     {
       "code": "019524",
@@ -70,9 +70,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -1.75,
-      "monthlyReturn": -0.64,
-      "yearlyReturn": 20.17
+      "weeklyReturn": 1.22,
+      "monthlyReturn": 1.96,
+      "yearlyReturn": 21.11
     },
     {
       "code": "019172",
@@ -154,9 +154,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.79,
-      "monthlyReturn": -0.58,
-      "yearlyReturn": 20.68
+      "weeklyReturn": 1.23,
+      "monthlyReturn": 2.05,
+      "yearlyReturn": 21.66
     },
     {
       "code": "160213",
@@ -178,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.71,
-      "monthlyReturn": -0.61,
-      "yearlyReturn": 21.66
+      "weeklyReturn": 1.28,
+      "monthlyReturn": 2,
+      "yearlyReturn": 22.62
     },
     {
       "code": "161130",
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.78,
-      "monthlyReturn": -0.66,
-      "yearlyReturn": 20.53
+      "weeklyReturn": 1.21,
+      "monthlyReturn": 1.97,
+      "yearlyReturn": 21.48
     },
     {
       "code": "015299",
