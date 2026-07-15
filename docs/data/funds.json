@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T20:59:49.038Z",
+  "updatedAt": "2026-07-15T02:29:05.150Z",
   "fundCount": 17,
   "funds": [
     {
@@ -147,18 +147,6 @@
       "yearlyReturn": 20.62
     },
     {
-      "code": "016532",
-      "name": "嘉实纳斯达克100ETF发起联接(QDII)A",
-      "company": "嘉实基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": -1.49,
-      "monthlyReturn": -1.29,
-      "yearlyReturn": 20.31
-    },
-    {
       "code": "160213",
       "name": "国泰纳斯达克100指数(QDII)",
       "company": "国泰基金",
@@ -205,6 +193,18 @@
       "weeklyReturn": -1.53,
       "monthlyReturn": -0.9,
       "yearlyReturn": 21.02
+    },
+    {
+      "code": "016532",
+      "name": "嘉实纳斯达克100ETF发起联接(QDII)A",
+      "company": "嘉实基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": -1.49,
+      "monthlyReturn": -1.29,
+      "yearlyReturn": 20.31
     }
   ]
 }
