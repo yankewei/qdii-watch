@@ -1,17 +1,3 @@
 {
-  "changes": [
-    {
-      "code": "018966",
-      "name": "汇添富纳斯达克100ETF发起式联接(QDII)A",
-      "company": "汇添富基金",
-      "old": {
-        "status": "limited",
-        "limitAmount": 50
-      },
-      "new": {
-        "status": "limited",
-        "limitAmount": 10
-      }
-    }
-  ]
+  "changes": []
 }
