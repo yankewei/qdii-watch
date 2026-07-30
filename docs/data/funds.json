@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T06:27:05.926Z",
+  "updatedAt": "2026-07-30T10:24:39.174Z",
   "fundCount": 17,
   "funds": [
     {
@@ -22,9 +22,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -4.77,
-      "monthlyReturn": -5.13,
-      "yearlyReturn": 12.01
+      "weeklyReturn": -6.27,
+      "monthlyReturn": -9.15,
+      "yearlyReturn": 9.83
     },
     {
       "code": "000834",
@@ -70,9 +70,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -4.51,
-      "monthlyReturn": -4.69,
-      "yearlyReturn": 11.25
+      "weeklyReturn": -5.96,
+      "monthlyReturn": -8.55,
+      "yearlyReturn": 9.18
     },
     {
       "code": "018966",
@@ -154,9 +154,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -4.51,
-      "monthlyReturn": -4.63,
-      "yearlyReturn": 11.79
+      "weeklyReturn": -5.96,
+      "monthlyReturn": -8.52,
+      "yearlyReturn": 9.71
     },
     {
       "code": "160213",
@@ -178,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -4.54,
-      "monthlyReturn": -4.7,
-      "yearlyReturn": 12.77
+      "weeklyReturn": -5.97,
+      "monthlyReturn": -8.55,
+      "yearlyReturn": 10.71
     },
     {
       "code": "161130",
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -4.51,
-      "monthlyReturn": -4.71,
-      "yearlyReturn": 11.58
+      "weeklyReturn": -5.96,
+      "monthlyReturn": -8.58,
+      "yearlyReturn": 9.51
     },
     {
       "code": "015299",
@@ -202,9 +202,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -4.52,
-      "monthlyReturn": -4.89,
-      "yearlyReturn": 12.17
+      "weeklyReturn": -6.04,
+      "monthlyReturn": -8.61,
+      "yearlyReturn": 10.13
     }
   ]
 }
