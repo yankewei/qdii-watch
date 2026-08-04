@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-03T21:03:44.049Z",
+  "updatedAt": "2026-08-04T02:28:16.657Z",
   "fundCount": 17,
   "funds": [
     {
@@ -171,6 +171,18 @@
       "yearlyReturn": 15.41
     },
     {
+      "code": "016055",
+      "name": "博时纳斯达克100ETF发起式联接(QDII)A",
+      "company": "博时基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": 0.45,
+      "monthlyReturn": -6.5,
+      "yearlyReturn": 15.41
+    },
+    {
       "code": "161130",
       "name": "易方达纳斯达克100LOF",
       "company": "易方达基金",
@@ -193,18 +205,6 @@
       "weeklyReturn": 0.09,
       "monthlyReturn": -6.8,
       "yearlyReturn": 14.16
-    },
-    {
-      "code": "016055",
-      "name": "博时纳斯达克100ETF发起式联接(QDII)A",
-      "company": "博时基金",
-      "status": "error",
-      "statusText": "获取失败",
-      "limitAmount": null,
-      "rawStatus": "",
-      "weeklyReturn": 0.45,
-      "monthlyReturn": -6.5,
-      "yearlyReturn": 15.41
     }
   ]
 }
