@@ -1,17 +1,3 @@
 {
-  "changes": [
-    {
-      "code": "160213",
-      "name": "国泰纳斯达克100指数(QDII)",
-      "company": "国泰基金",
-      "old": {
-        "status": "suspended",
-        "limitAmount": null
-      },
-      "new": {
-        "status": "limited",
-        "limitAmount": 50
-      }
-    }
-  ]
+  "changes": []
 }
