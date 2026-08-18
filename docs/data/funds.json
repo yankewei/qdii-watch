@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-18T12:43:07.656Z",
+  "updatedAt": "2026-08-18T16:30:18.676Z",
   "fundCount": 17,
   "funds": [
     {
@@ -123,6 +123,18 @@
       "yearlyReturn": 19.08
     },
     {
+      "code": "160213",
+      "name": "国泰纳斯达克100指数(QDII)",
+      "company": "国泰基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 50,
+      "rawStatus": "限大额",
+      "weeklyReturn": 1.18,
+      "monthlyReturn": 4.76,
+      "yearlyReturn": 19.98
+    },
+    {
       "code": "539001",
       "name": "建信纳斯达克100指数(QDII)A",
       "company": "建信基金",
@@ -157,18 +169,6 @@
       "weeklyReturn": 1.21,
       "monthlyReturn": 4.7,
       "yearlyReturn": 18.79
-    },
-    {
-      "code": "160213",
-      "name": "国泰纳斯达克100指数(QDII)",
-      "company": "国泰基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": 1.18,
-      "monthlyReturn": 4.76,
-      "yearlyReturn": 19.98
     },
     {
       "code": "016055",
