@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T04:35:48.230Z",
+  "updatedAt": "2026-08-19T08:36:15.843Z",
   "fundCount": 17,
   "funds": [
     {
@@ -61,6 +61,18 @@
       "weeklyReturn": 1.17,
       "monthlyReturn": 4.61,
       "yearlyReturn": 18.81
+    },
+    {
+      "code": "539001",
+      "name": "建信纳斯达克100指数(QDII)A",
+      "company": "建信基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 10,
+      "rawStatus": "限大额",
+      "weeklyReturn": 1.11,
+      "monthlyReturn": 4.19,
+      "yearlyReturn": 17.76
     },
     {
       "code": "019524",
@@ -135,18 +147,6 @@
       "yearlyReturn": 19.98
     },
     {
-      "code": "539001",
-      "name": "建信纳斯达克100指数(QDII)A",
-      "company": "建信基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 100,
-      "rawStatus": "限大额",
-      "weeklyReturn": 1.11,
-      "monthlyReturn": 4.19,
-      "yearlyReturn": 17.76
-    },
-    {
       "code": "018043",
       "name": "天弘纳斯达克100指数发起(QDII)A",
       "company": "天弘基金",
@@ -178,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 1.2,
-      "monthlyReturn": 4.66,
-      "yearlyReturn": 19.93
+      "weeklyReturn": -0.08,
+      "monthlyReturn": 3.03,
+      "yearlyReturn": 18.12
     },
     {
       "code": "161130",
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 1.2,
-      "monthlyReturn": 4.64,
-      "yearlyReturn": 18.56
+      "weeklyReturn": -0.09,
+      "monthlyReturn": 3.01,
+      "yearlyReturn": 16.8
     },
     {
       "code": "015299",
@@ -202,9 +202,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 1.07,
-      "monthlyReturn": 4.03,
-      "yearlyReturn": 18.35
+      "weeklyReturn": -0.21,
+      "monthlyReturn": 2.42,
+      "yearlyReturn": 16.56
     }
   ]
 }

@@ -1,3 +1,17 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "code": "539001",
+      "name": "建信纳斯达克100指数(QDII)A",
+      "company": "建信基金",
+      "old": {
+        "status": "limited",
+        "limitAmount": 100
+      },
+      "new": {
+        "status": "limited",
+        "limitAmount": 10
+      }
+    }
+  ]
 }
