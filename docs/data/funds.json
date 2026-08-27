@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T22:45:11.244Z",
+  "updatedAt": "2026-08-27T07:44:06.723Z",
   "fundCount": 17,
   "funds": [
     {
@@ -202,9 +202,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.21,
+      "weeklyReturn": -0.93,
       "monthlyReturn": 2.8,
-      "yearlyReturn": 16.94
+      "yearlyReturn": 16.3
     }
   ]
 }
