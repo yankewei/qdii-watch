@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T03:46:49.335Z",
+  "updatedAt": "2026-09-01T09:12:07.099Z",
   "fundCount": 17,
   "funds": [
     {
@@ -135,6 +135,18 @@
       "yearlyReturn": 17.4
     },
     {
+      "code": "018043",
+      "name": "天弘纳斯达克100指数发起(QDII)A",
+      "company": "天弘基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 100,
+      "rawStatus": "限大额",
+      "weeklyReturn": 0.39,
+      "monthlyReturn": 5.5,
+      "yearlyReturn": 17.24
+    },
+    {
       "code": "160213",
       "name": "国泰纳斯达克100指数(QDII)",
       "company": "国泰基金",
@@ -147,18 +159,6 @@
       "yearlyReturn": 18.05
     },
     {
-      "code": "018043",
-      "name": "天弘纳斯达克100指数发起(QDII)A",
-      "company": "天弘基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": 0.39,
-      "monthlyReturn": 5.5,
-      "yearlyReturn": 17.24
-    },
-    {
       "code": "016532",
       "name": "嘉实纳斯达克100ETF发起联接(QDII)A",
       "company": "嘉实基金",
@@ -166,9 +166,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 0.41,
-      "monthlyReturn": 5.67,
-      "yearlyReturn": 17.15
+      "weeklyReturn": 1.41,
+      "monthlyReturn": 3.97,
+      "yearlyReturn": 18.68
     },
     {
       "code": "016055",
