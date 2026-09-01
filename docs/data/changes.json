@@ -1,16 +1,16 @@
 {
   "changes": [
     {
-      "code": "018043",
-      "name": "天弘纳斯达克100指数发起(QDII)A",
-      "company": "天弘基金",
+      "code": "018966",
+      "name": "汇添富纳斯达克100ETF发起式联接(QDII)A",
+      "company": "汇添富基金",
       "old": {
-        "status": "suspended",
-        "limitAmount": null
+        "status": "limited",
+        "limitAmount": 10
       },
       "new": {
         "status": "limited",
-        "limitAmount": 100
+        "limitAmount": 1
       }
     }
   ]
