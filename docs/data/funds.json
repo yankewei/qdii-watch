@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T14:59:27.209Z",
+  "updatedAt": "2026-09-06T18:04:15.658Z",
   "fundCount": 17,
   "funds": [
     {
@@ -147,18 +147,6 @@
       "yearlyReturn": 18.43
     },
     {
-      "code": "018966",
-      "name": "汇添富纳斯达克100ETF发起式联接(QDII)A",
-      "company": "汇添富基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": -0.67,
-      "monthlyReturn": 2.1,
-      "yearlyReturn": 16.77
-    },
-    {
       "code": "019172",
       "name": "摩根纳斯达克100指数(QDII)A",
       "company": "摩根基金",
@@ -205,6 +193,18 @@
       "weeklyReturn": -0.54,
       "monthlyReturn": 1.73,
       "yearlyReturn": 18.01
+    },
+    {
+      "code": "018966",
+      "name": "汇添富纳斯达克100ETF发起式联接(QDII)A",
+      "company": "汇添富基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": -0.67,
+      "monthlyReturn": 2.1,
+      "yearlyReturn": 16.77
     }
   ]
 }
