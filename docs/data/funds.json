@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T22:23:33.293Z",
+  "updatedAt": "2026-09-09T03:18:23.798Z",
   "fundCount": 17,
   "funds": [
     {
@@ -70,9 +70,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.23,
-      "monthlyReturn": -0.73,
-      "yearlyReturn": 16.75
+      "weeklyReturn": 0.31,
+      "monthlyReturn": -0.75,
+      "yearlyReturn": 16.85
     },
     {
       "code": "019524",
