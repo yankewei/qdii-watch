@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T08:40:47.332Z",
+  "updatedAt": "2026-09-09T15:59:33.909Z",
   "fundCount": 17,
   "funds": [
     {
@@ -10,9 +10,9 @@
       "statusText": "限大额",
       "limitAmount": 5,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.23,
-      "monthlyReturn": -0.86,
-      "yearlyReturn": 17.36
+      "weeklyReturn": 1.45,
+      "monthlyReturn": -0.97,
+      "yearlyReturn": 16.75
     },
     {
       "code": "040046",
@@ -22,9 +22,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.17,
-      "monthlyReturn": -1.1,
-      "yearlyReturn": 17.59
+      "weeklyReturn": 1.41,
+      "monthlyReturn": -1.21,
+      "yearlyReturn": 16.97
     },
     {
       "code": "000834",
@@ -34,9 +34,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.16,
-      "monthlyReturn": -0.97,
-      "yearlyReturn": 17.21
+      "weeklyReturn": 1.39,
+      "monthlyReturn": -1.07,
+      "yearlyReturn": 16.6
     },
     {
       "code": "016452",
@@ -46,9 +46,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.27,
-      "monthlyReturn": -0.68,
-      "yearlyReturn": 17.51
+      "weeklyReturn": 1.42,
+      "monthlyReturn": -0.79,
+      "yearlyReturn": 16.93
     },
     {
       "code": "019547",
@@ -58,9 +58,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.24,
-      "monthlyReturn": -0.68,
-      "yearlyReturn": 17.81
+      "weeklyReturn": 1.38,
+      "monthlyReturn": -0.79,
+      "yearlyReturn": 17.23
     },
     {
       "code": "539001",
@@ -70,9 +70,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.31,
-      "monthlyReturn": -0.75,
-      "yearlyReturn": 16.85
+      "weeklyReturn": 1.41,
+      "monthlyReturn": -0.79,
+      "yearlyReturn": 16.21
     },
     {
       "code": "019524",
@@ -82,9 +82,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.23,
-      "monthlyReturn": -0.76,
-      "yearlyReturn": 16.94
+      "weeklyReturn": 1.38,
+      "monthlyReturn": -0.87,
+      "yearlyReturn": 16.36
     },
     {
       "code": "018966",
@@ -94,9 +94,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -0.01,
-      "monthlyReturn": -0.94,
-      "yearlyReturn": 15.77
+      "weeklyReturn": 0.88,
+      "monthlyReturn": -1.31,
+      "yearlyReturn": 14.89
     },
     {
       "code": "019172",
@@ -106,9 +106,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.26,
-      "monthlyReturn": -0.67,
-      "yearlyReturn": 18.18
+      "weeklyReturn": 1.41,
+      "monthlyReturn": -0.78,
+      "yearlyReturn": 17.6
     },
     {
       "code": "018043",
@@ -118,9 +118,9 @@
       "statusText": "限大额",
       "limitAmount": 100,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.24,
-      "monthlyReturn": -0.73,
-      "yearlyReturn": 17.86
+      "weeklyReturn": 1.41,
+      "monthlyReturn": -0.83,
+      "yearlyReturn": 17.28
     },
     {
       "code": "160213",
@@ -130,9 +130,21 @@
       "statusText": "限大额",
       "limitAmount": 100,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.25,
-      "monthlyReturn": -0.8,
-      "yearlyReturn": 18.7
+      "weeklyReturn": 1.47,
+      "monthlyReturn": -0.88,
+      "yearlyReturn": 18.09
+    },
+    {
+      "code": "019441",
+      "name": "万家纳斯达克100指数发起式(QDII)A",
+      "company": "万家基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 100,
+      "rawStatus": "限大额",
+      "weeklyReturn": 1.4,
+      "monthlyReturn": -0.78,
+      "yearlyReturn": 17.46
     },
     {
       "code": "019736",
@@ -142,21 +154,9 @@
       "statusText": "限大额",
       "limitAmount": 200,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.25,
-      "monthlyReturn": -0.7,
-      "yearlyReturn": 17.42
-    },
-    {
-      "code": "019441",
-      "name": "万家纳斯达克100指数发起式(QDII)A",
-      "company": "万家基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 5000,
-      "rawStatus": "限大额",
-      "weeklyReturn": 0.25,
-      "monthlyReturn": -0.68,
-      "yearlyReturn": 18.04
+      "weeklyReturn": 1.4,
+      "monthlyReturn": -0.8,
+      "yearlyReturn": 16.83
     },
     {
       "code": "016532",
@@ -166,9 +166,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 0.26,
-      "monthlyReturn": -0.64,
-      "yearlyReturn": 17.79
+      "weeklyReturn": 1.42,
+      "monthlyReturn": -0.75,
+      "yearlyReturn": 17.21
     },
     {
       "code": "016055",
@@ -178,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 0.25,
-      "monthlyReturn": -0.68,
-      "yearlyReturn": 18.83
+      "weeklyReturn": 1.42,
+      "monthlyReturn": -0.78,
+      "yearlyReturn": 18.25
     },
     {
       "code": "161130",
@@ -202,9 +202,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 0.16,
-      "monthlyReturn": -1.17,
-      "yearlyReturn": 17.13
+      "weeklyReturn": 1.25,
+      "monthlyReturn": -1.28,
+      "yearlyReturn": 16.56
     }
   ]
 }
