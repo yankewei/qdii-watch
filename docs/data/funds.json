@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T03:18:02.817Z",
+  "updatedAt": "2026-09-10T08:40:51.040Z",
   "fundCount": 17,
   "funds": [
     {
@@ -8,7 +8,7 @@
       "company": "广发基金",
       "status": "limited",
       "statusText": "限大额",
-      "limitAmount": 5,
+      "limitAmount": 2,
       "rawStatus": "限大额",
       "weeklyReturn": 1.45,
       "monthlyReturn": -0.97,
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 1.42,
-      "monthlyReturn": -0.76,
-      "yearlyReturn": 17.02
+      "weeklyReturn": 0.84,
+      "monthlyReturn": -1.08,
+      "yearlyReturn": 16.33
     },
     {
       "code": "015299",
