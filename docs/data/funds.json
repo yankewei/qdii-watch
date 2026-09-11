@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T03:13:28.312Z",
+  "updatedAt": "2026-09-11T08:36:59.951Z",
   "fundCount": 17,
   "funds": [
     {
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 0.84,
-      "monthlyReturn": -1.08,
-      "yearlyReturn": 16.33
+      "weeklyReturn": -1.24,
+      "monthlyReturn": -1.76,
+      "yearlyReturn": 15.03
     },
     {
       "code": "015299",
