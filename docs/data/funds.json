@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T09:06:04.083Z",
+  "updatedAt": "2026-09-20T15:32:00.013Z",
   "fundCount": 17,
   "funds": [
     {
@@ -135,18 +135,6 @@
       "yearlyReturn": 14.26
     },
     {
-      "code": "270042",
-      "name": "广发纳指100ETF联接(QDII)A",
-      "company": "广发基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": 0.85,
-      "monthlyReturn": -2.41,
-      "yearlyReturn": 13.94
-    },
-    {
       "code": "018043",
       "name": "天弘纳斯达克100指数发起(QDII)A",
       "company": "天弘基金",
@@ -205,6 +193,18 @@
       "weeklyReturn": 1.13,
       "monthlyReturn": -2.23,
       "yearlyReturn": 14.54
+    },
+    {
+      "code": "270042",
+      "name": "广发纳指100ETF联接(QDII)A",
+      "company": "广发基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": 0.85,
+      "monthlyReturn": -2.41,
+      "yearlyReturn": 13.94
     }
   ]
 }
