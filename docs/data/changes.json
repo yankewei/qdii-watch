@@ -1,17 +1,3 @@
 {
-  "changes": [
-    {
-      "code": "019524",
-      "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
-      "company": "华泰柏瑞基金",
-      "old": {
-        "status": "limited",
-        "limitAmount": 10
-      },
-      "new": {
-        "status": "suspended",
-        "limitAmount": null
-      }
-    }
-  ]
+  "changes": []
 }
