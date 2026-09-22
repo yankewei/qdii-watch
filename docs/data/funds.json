@@ -1,7 +1,19 @@
 {
-  "updatedAt": "2026-09-22T03:31:04.231Z",
+  "updatedAt": "2026-09-22T09:03:26.582Z",
   "fundCount": 17,
   "funds": [
+    {
+      "code": "019524",
+      "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
+      "company": "华泰柏瑞基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 5,
+      "rawStatus": "限大额",
+      "weeklyReturn": 0.57,
+      "monthlyReturn": -0.08,
+      "yearlyReturn": 13.26
+    },
     {
       "code": "040046",
       "name": "华安纳斯达克100ETF联接(QDII)A",
@@ -154,9 +166,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 0.6,
-      "monthlyReturn": 0.05,
-      "yearlyReturn": 14.11
+      "weeklyReturn": 4.13,
+      "monthlyReturn": 3.41,
+      "yearlyReturn": 16.29
     },
     {
       "code": "016055",
@@ -171,18 +183,6 @@
       "yearlyReturn": 15.09
     },
     {
-      "code": "019524",
-      "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
-      "company": "华泰柏瑞基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": 0.57,
-      "monthlyReturn": -0.08,
-      "yearlyReturn": 13.26
-    },
-    {
       "code": "161130",
       "name": "易方达纳斯达克100LOF",
       "company": "易方达基金",
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 0.58,
-      "monthlyReturn": 0.01,
-      "yearlyReturn": 13.94
+      "weeklyReturn": 4.13,
+      "monthlyReturn": 3.38,
+      "yearlyReturn": 16.13
     },
     {
       "code": "015299",
