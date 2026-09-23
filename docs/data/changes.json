@@ -1,3 +1,30 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "code": "019441",
+      "name": "万家纳斯达克100指数发起式(QDII)A",
+      "company": "万家基金",
+      "old": {
+        "status": "limited",
+        "limitAmount": 100
+      },
+      "new": {
+        "status": "limited",
+        "limitAmount": 10
+      }
+    },
+    {
+      "code": "040046",
+      "name": "华安纳斯达克100ETF联接(QDII)A",
+      "company": "华安基金",
+      "old": {
+        "status": "limited",
+        "limitAmount": 10
+      },
+      "new": {
+        "status": "suspended",
+        "limitAmount": null
+      }
+    }
+  ]
 }

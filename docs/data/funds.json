@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T22:45:13.561Z",
+  "updatedAt": "2026-09-23T09:06:52.529Z",
   "fundCount": 17,
   "funds": [
     {
@@ -13,18 +13,6 @@
       "weeklyReturn": 4.12,
       "monthlyReturn": 3.3,
       "yearlyReturn": 15.44
-    },
-    {
-      "code": "040046",
-      "name": "华安纳斯达克100ETF联接(QDII)A",
-      "company": "华安基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": 4.31,
-      "monthlyReturn": 3.27,
-      "yearlyReturn": 15.93
     },
     {
       "code": "000834",
@@ -99,6 +87,18 @@
       "yearlyReturn": 16.6
     },
     {
+      "code": "019441",
+      "name": "万家纳斯达克100指数发起式(QDII)A",
+      "company": "万家基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 10,
+      "rawStatus": "限大额",
+      "weeklyReturn": 3.97,
+      "monthlyReturn": 3.71,
+      "yearlyReturn": 16.88
+    },
+    {
       "code": "160213",
       "name": "国泰纳斯达克100指数(QDII)",
       "company": "国泰基金",
@@ -109,18 +109,6 @@
       "weeklyReturn": 4.21,
       "monthlyReturn": 3.48,
       "yearlyReturn": 17.23
-    },
-    {
-      "code": "019441",
-      "name": "万家纳斯达克100指数发起式(QDII)A",
-      "company": "万家基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 100,
-      "rawStatus": "限大额",
-      "weeklyReturn": 3.97,
-      "monthlyReturn": 3.71,
-      "yearlyReturn": 16.88
     },
     {
       "code": "019736",
@@ -147,6 +135,18 @@
       "yearlyReturn": 15.77
     },
     {
+      "code": "040046",
+      "name": "华安纳斯达克100ETF联接(QDII)A",
+      "company": "华安基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": 4.31,
+      "monthlyReturn": 3.27,
+      "yearlyReturn": 15.93
+    },
+    {
       "code": "018043",
       "name": "天弘纳斯达克100指数发起(QDII)A",
       "company": "天弘基金",
@@ -166,9 +166,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 4.13,
-      "monthlyReturn": 3.41,
-      "yearlyReturn": 16.29
+      "weeklyReturn": 5.61,
+      "monthlyReturn": 4.2,
+      "yearlyReturn": 16.61
     },
     {
       "code": "016055",
@@ -178,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 4.15,
-      "monthlyReturn": 3.37,
-      "yearlyReturn": 17.29
+      "weeklyReturn": 5.61,
+      "monthlyReturn": 4.14,
+      "yearlyReturn": 17.58
     },
     {
       "code": "161130",
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 4.13,
-      "monthlyReturn": 3.38,
-      "yearlyReturn": 16.13
+      "weeklyReturn": 5.6,
+      "monthlyReturn": 4.15,
+      "yearlyReturn": 16.42
     },
     {
       "code": "015299",
@@ -202,9 +202,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 4.27,
-      "monthlyReturn": 3.41,
-      "yearlyReturn": 16.32
+      "weeklyReturn": 5.71,
+      "monthlyReturn": 4.27,
+      "yearlyReturn": 16.61
     }
   ]
 }
