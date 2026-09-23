@@ -1,7 +1,19 @@
 {
-  "updatedAt": "2026-09-23T09:06:52.529Z",
+  "updatedAt": "2026-09-23T16:12:03.219Z",
   "fundCount": 17,
   "funds": [
+    {
+      "code": "040046",
+      "name": "华安纳斯达克100ETF联接(QDII)A",
+      "company": "华安基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 5,
+      "rawStatus": "限大额",
+      "weeklyReturn": 5.83,
+      "monthlyReturn": 4.05,
+      "yearlyReturn": 16.19
+    },
     {
       "code": "019524",
       "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
@@ -10,9 +22,9 @@
       "statusText": "限大额",
       "limitAmount": 5,
       "rawStatus": "限大额",
-      "weeklyReturn": 4.12,
-      "monthlyReturn": 3.3,
-      "yearlyReturn": 15.44
+      "weeklyReturn": 5.57,
+      "monthlyReturn": 4.05,
+      "yearlyReturn": 15.71
     },
     {
       "code": "000834",
@@ -22,9 +34,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 4.08,
-      "monthlyReturn": 3.11,
-      "yearlyReturn": 15.44
+      "weeklyReturn": 5.61,
+      "monthlyReturn": 3.9,
+      "yearlyReturn": 15.72
     },
     {
       "code": "016452",
@@ -34,9 +46,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 4.12,
-      "monthlyReturn": 3.34,
-      "yearlyReturn": 15.98
+      "weeklyReturn": 5.6,
+      "monthlyReturn": 4.11,
+      "yearlyReturn": 16.25
     },
     {
       "code": "019547",
@@ -46,9 +58,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 4.04,
-      "monthlyReturn": 3.27,
-      "yearlyReturn": 16.29
+      "weeklyReturn": 5.45,
+      "monthlyReturn": 4,
+      "yearlyReturn": 16.55
     },
     {
       "code": "539001",
@@ -58,21 +70,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 4.06,
-      "monthlyReturn": 3.32,
-      "yearlyReturn": 15.26
-    },
-    {
-      "code": "018966",
-      "name": "汇添富纳斯达克100ETF发起式联接(QDII)A",
-      "company": "汇添富基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": 3.74,
-      "monthlyReturn": 2.05,
-      "yearlyReturn": 13.21
+      "weeklyReturn": 5.46,
+      "monthlyReturn": 4.05,
+      "yearlyReturn": 15.53
     },
     {
       "code": "019172",
@@ -82,9 +82,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 4.05,
-      "monthlyReturn": 3.29,
-      "yearlyReturn": 16.6
+      "weeklyReturn": 5.49,
+      "monthlyReturn": 4.04,
+      "yearlyReturn": 16.86
     },
     {
       "code": "019441",
@@ -94,9 +94,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 3.97,
-      "monthlyReturn": 3.71,
-      "yearlyReturn": 16.88
+      "weeklyReturn": 5.42,
+      "monthlyReturn": 4.47,
+      "yearlyReturn": 17.16
     },
     {
       "code": "160213",
@@ -106,9 +106,9 @@
       "statusText": "限大额",
       "limitAmount": 100,
       "rawStatus": "限大额",
-      "weeklyReturn": 4.21,
-      "monthlyReturn": 3.48,
-      "yearlyReturn": 17.23
+      "weeklyReturn": 5.67,
+      "monthlyReturn": 4.22,
+      "yearlyReturn": 17.44
     },
     {
       "code": "019736",
@@ -118,9 +118,9 @@
       "statusText": "限大额",
       "limitAmount": 200,
       "rawStatus": "限大额",
-      "weeklyReturn": 3.94,
-      "monthlyReturn": 3.23,
-      "yearlyReturn": 15.7
+      "weeklyReturn": 5.31,
+      "monthlyReturn": 3.95,
+      "yearlyReturn": 15.94
     },
     {
       "code": "270042",
@@ -130,21 +130,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 4.35,
-      "monthlyReturn": 3.39,
-      "yearlyReturn": 15.77
-    },
-    {
-      "code": "040046",
-      "name": "华安纳斯达克100ETF联接(QDII)A",
-      "company": "华安基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": 4.31,
-      "monthlyReturn": 3.27,
-      "yearlyReturn": 15.93
+      "weeklyReturn": 5.9,
+      "monthlyReturn": 4.2,
+      "yearlyReturn": 16.07
     },
     {
       "code": "018043",
@@ -154,9 +142,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 4.09,
-      "monthlyReturn": 3.34,
-      "yearlyReturn": 16.31
+      "weeklyReturn": 5.55,
+      "monthlyReturn": 4.1,
+      "yearlyReturn": 16.59
     },
     {
       "code": "016532",
@@ -193,6 +181,18 @@
       "weeklyReturn": 5.6,
       "monthlyReturn": 4.15,
       "yearlyReturn": 16.42
+    },
+    {
+      "code": "018966",
+      "name": "汇添富纳斯达克100ETF发起式联接(QDII)A",
+      "company": "汇添富基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": 5.15,
+      "monthlyReturn": 2.71,
+      "yearlyReturn": 13.38
     },
     {
       "code": "015299",
