@@ -1,3 +1,30 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "code": "019736",
+      "name": "宝盈纳斯达克100指数发起(QDII)A",
+      "company": "宝盈基金",
+      "old": {
+        "status": "limited",
+        "limitAmount": 200
+      },
+      "new": {
+        "status": "limited",
+        "limitAmount": 10
+      }
+    },
+    {
+      "code": "160213",
+      "name": "国泰纳斯达克100指数(QDII)",
+      "company": "国泰基金",
+      "old": {
+        "status": "limited",
+        "limitAmount": 100
+      },
+      "new": {
+        "status": "suspended",
+        "limitAmount": null
+      }
+    }
+  ]
 }
