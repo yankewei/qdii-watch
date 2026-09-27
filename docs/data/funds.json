@@ -1,19 +1,7 @@
 {
-  "updatedAt": "2026-09-26T22:23:34.956Z",
+  "updatedAt": "2026-09-27T03:57:41.816Z",
   "fundCount": 17,
   "funds": [
-    {
-      "code": "040046",
-      "name": "华安纳斯达克100ETF联接(QDII)A",
-      "company": "华安基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 5,
-      "rawStatus": "限大额",
-      "weeklyReturn": 5.04,
-      "monthlyReturn": 3.22,
-      "yearlyReturn": 16.18
-    },
     {
       "code": "019524",
       "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
@@ -37,30 +25,6 @@
       "weeklyReturn": 4.75,
       "monthlyReturn": 3.03,
       "yearlyReturn": 15.65
-    },
-    {
-      "code": "016452",
-      "name": "南方纳斯达克100指数发起(QDII)A",
-      "company": "南方基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": 4.78,
-      "monthlyReturn": 3.27,
-      "yearlyReturn": 16.2
-    },
-    {
-      "code": "019547",
-      "name": "招商纳斯达克100ETF发起式联接(QDII)A",
-      "company": "招商基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": 4.69,
-      "monthlyReturn": 3.22,
-      "yearlyReturn": 16.54
     },
     {
       "code": "539001",
@@ -111,18 +75,6 @@
       "yearlyReturn": 17.12
     },
     {
-      "code": "270042",
-      "name": "广发纳指100ETF联接(QDII)A",
-      "company": "广发基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": 5.04,
-      "monthlyReturn": 3.31,
-      "yearlyReturn": 15.98
-    },
-    {
       "code": "018043",
       "name": "天弘纳斯达克100指数发起(QDII)A",
       "company": "天弘基金",
@@ -145,18 +97,6 @@
       "weeklyReturn": 4.83,
       "monthlyReturn": 3.39,
       "yearlyReturn": 16.58
-    },
-    {
-      "code": "160213",
-      "name": "国泰纳斯达克100指数(QDII)",
-      "company": "国泰基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": 4.85,
-      "monthlyReturn": 3.39,
-      "yearlyReturn": 17.49
     },
     {
       "code": "016055",
@@ -205,6 +145,66 @@
       "weeklyReturn": 5.07,
       "monthlyReturn": 3.58,
       "yearlyReturn": 16.67
+    },
+    {
+      "code": "270042",
+      "name": "广发纳指100ETF联接(QDII)A",
+      "company": "广发基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": 5.04,
+      "monthlyReturn": 3.31,
+      "yearlyReturn": 15.98
+    },
+    {
+      "code": "040046",
+      "name": "华安纳斯达克100ETF联接(QDII)A",
+      "company": "华安基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": 5.04,
+      "monthlyReturn": 3.22,
+      "yearlyReturn": 16.18
+    },
+    {
+      "code": "160213",
+      "name": "国泰纳斯达克100指数(QDII)",
+      "company": "国泰基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": 4.85,
+      "monthlyReturn": 3.39,
+      "yearlyReturn": 17.49
+    },
+    {
+      "code": "016452",
+      "name": "南方纳斯达克100指数发起(QDII)A",
+      "company": "南方基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": 4.78,
+      "monthlyReturn": 3.27,
+      "yearlyReturn": 16.2
+    },
+    {
+      "code": "019547",
+      "name": "招商纳斯达克100ETF发起式联接(QDII)A",
+      "company": "招商基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": 4.69,
+      "monthlyReturn": 3.22,
+      "yearlyReturn": 16.54
     }
   ]
 }
