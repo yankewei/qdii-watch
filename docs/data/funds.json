@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T11:26:52.681Z",
+  "updatedAt": "2026-10-13T18:55:35.002Z",
   "fundCount": 17,
   "funds": [
     {
@@ -63,18 +63,6 @@
       "yearlyReturn": 18.4
     },
     {
-      "code": "019547",
-      "name": "招商纳斯达克100ETF发起式联接(QDII)A",
-      "company": "招商基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": 0.68,
-      "monthlyReturn": 3.43,
-      "yearlyReturn": 18.64
-    },
-    {
       "code": "539001",
       "name": "建信纳斯达克100指数(QDII)A",
       "company": "建信基金",
@@ -106,9 +94,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 1.4,
-      "monthlyReturn": 4,
-      "yearlyReturn": 14.92
+      "weeklyReturn": 0.7,
+      "monthlyReturn": 3.48,
+      "yearlyReturn": 18.07
     },
     {
       "code": "019441",
@@ -118,9 +106,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 1.44,
-      "monthlyReturn": 4.4,
-      "yearlyReturn": 16
+      "weeklyReturn": 0.73,
+      "monthlyReturn": 3.78,
+      "yearlyReturn": 19.19
     },
     {
       "code": "018043",
@@ -154,9 +142,21 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": 1.44,
-      "monthlyReturn": 4.16,
-      "yearlyReturn": 16.52
+      "weeklyReturn": 0.7,
+      "monthlyReturn": 3.61,
+      "yearlyReturn": 19.95
+    },
+    {
+      "code": "019547",
+      "name": "招商纳斯达克100ETF发起式联接(QDII)A",
+      "company": "招商基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": 0.68,
+      "monthlyReturn": 3.43,
+      "yearlyReturn": 18.64
     },
     {
       "code": "016055",
