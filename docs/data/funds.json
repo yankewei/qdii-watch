@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T03:19:44.915Z",
+  "updatedAt": "2026-10-16T08:46:40.165Z",
   "fundCount": 17,
   "funds": [
     {
@@ -130,9 +130,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.54,
-      "monthlyReturn": 2.14,
-      "yearlyReturn": 14.66
+      "weeklyReturn": -2.58,
+      "monthlyReturn": 2.76,
+      "yearlyReturn": 13.96
     },
     {
       "code": "160213",
@@ -178,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.56,
-      "monthlyReturn": 2.11,
-      "yearlyReturn": 14.32
+      "weeklyReturn": -2.59,
+      "monthlyReturn": 2.73,
+      "yearlyReturn": 13.58
     },
     {
       "code": "018966",
