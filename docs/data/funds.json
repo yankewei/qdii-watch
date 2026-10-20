@@ -1,19 +1,7 @@
 {
-  "updatedAt": "2026-10-20T03:36:05.466Z",
+  "updatedAt": "2026-10-20T09:09:48.770Z",
   "fundCount": 17,
   "funds": [
-    {
-      "code": "040046",
-      "name": "华安纳斯达克100ETF联接(QDII)A",
-      "company": "华安基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 5,
-      "rawStatus": "限大额",
-      "weeklyReturn": -5.6,
-      "monthlyReturn": 0.21,
-      "yearlyReturn": 10.74
-    },
     {
       "code": "019524",
       "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
@@ -111,6 +99,18 @@
       "yearlyReturn": 10.42
     },
     {
+      "code": "040046",
+      "name": "华安纳斯达克100ETF联接(QDII)A",
+      "company": "华安基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": -5.6,
+      "monthlyReturn": 0.21,
+      "yearlyReturn": 10.74
+    },
+    {
       "code": "018043",
       "name": "天弘纳斯达克100指数发起(QDII)A",
       "company": "天弘基金",
@@ -130,9 +130,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -5.33,
-      "monthlyReturn": 0.31,
-      "yearlyReturn": 11.64
+      "weeklyReturn": -3.66,
+      "monthlyReturn": -0.73,
+      "yearlyReturn": 12.21
     },
     {
       "code": "160213",
@@ -178,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -5.35,
-      "monthlyReturn": 0.28,
-      "yearlyReturn": 11.25
+      "weeklyReturn": -3.67,
+      "monthlyReturn": -0.75,
+      "yearlyReturn": 11.8
     },
     {
       "code": "018966",
@@ -202,9 +202,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -5.27,
-      "monthlyReturn": 0.6,
-      "yearlyReturn": 11.4
+      "weeklyReturn": -3.67,
+      "monthlyReturn": -0.49,
+      "yearlyReturn": 11.85
     }
   ]
 }

@@ -1,3 +1,17 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "code": "040046",
+      "name": "华安纳斯达克100ETF联接(QDII)A",
+      "company": "华安基金",
+      "old": {
+        "status": "limited",
+        "limitAmount": 5
+      },
+      "new": {
+        "status": "suspended",
+        "limitAmount": null
+      }
+    }
+  ]
 }
