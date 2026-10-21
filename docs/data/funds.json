@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T22:56:44.798Z",
+  "updatedAt": "2026-10-21T03:29:06.691Z",
   "fundCount": 17,
   "funds": [
     {
@@ -13,6 +13,18 @@
       "weeklyReturn": -3.68,
       "monthlyReturn": -0.86,
       "yearlyReturn": 11.07
+    },
+    {
+      "code": "019441",
+      "name": "万家纳斯达克100指数发起式(QDII)A",
+      "company": "万家基金",
+      "status": "limited",
+      "statusText": "限大额",
+      "limitAmount": 5,
+      "rawStatus": "限大额",
+      "weeklyReturn": -3.66,
+      "monthlyReturn": -0.92,
+      "yearlyReturn": 12.4
     },
     {
       "code": "000834",
@@ -181,18 +193,6 @@
       "weeklyReturn": -3.67,
       "monthlyReturn": -1.16,
       "yearlyReturn": 8.72
-    },
-    {
-      "code": "019441",
-      "name": "万家纳斯达克100指数发起式(QDII)A",
-      "company": "万家基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": -3.66,
-      "monthlyReturn": -0.92,
-      "yearlyReturn": 12.4
     },
     {
       "code": "015299",
