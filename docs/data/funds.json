@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T04:34:30.713Z",
+  "updatedAt": "2026-10-30T14:51:33.350Z",
   "fundCount": 17,
   "funds": [
     {
@@ -10,9 +10,9 @@
       "statusText": "限大额",
       "limitAmount": 5,
       "rawStatus": "限大额",
-      "weeklyReturn": 0,
-      "monthlyReturn": -1.78,
-      "yearlyReturn": 7.59
+      "weeklyReturn": 1.37,
+      "monthlyReturn": -3.29,
+      "yearlyReturn": 5.77
     },
     {
       "code": "019441",
@@ -22,9 +22,9 @@
       "statusText": "限大额",
       "limitAmount": 5,
       "rawStatus": "限大额",
-      "weeklyReturn": -0.07,
-      "monthlyReturn": -1.81,
-      "yearlyReturn": 8.62
+      "weeklyReturn": 1.37,
+      "monthlyReturn": -3.31,
+      "yearlyReturn": 6.79
     },
     {
       "code": "000834",
@@ -34,9 +34,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -0.21,
-      "monthlyReturn": -2.18,
-      "yearlyReturn": 6.62
+      "weeklyReturn": 1.3,
+      "monthlyReturn": -3.72,
+      "yearlyReturn": 4.73
     },
     {
       "code": "016452",
@@ -46,9 +46,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -0.07,
-      "monthlyReturn": -1.84,
-      "yearlyReturn": 7.89
+      "weeklyReturn": 1.39,
+      "monthlyReturn": -3.36,
+      "yearlyReturn": 6.05
     },
     {
       "code": "539001",
@@ -58,9 +58,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": 0.05,
-      "monthlyReturn": -1.87,
-      "yearlyReturn": 7.57
+      "weeklyReturn": 1.34,
+      "monthlyReturn": -3.28,
+      "yearlyReturn": 5.78
     },
     {
       "code": "019172",
@@ -70,9 +70,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -0.07,
-      "monthlyReturn": -1.79,
-      "yearlyReturn": 8.64
+      "weeklyReturn": 1.38,
+      "monthlyReturn": -3.29,
+      "yearlyReturn": 6.84
     },
     {
       "code": "019736",
@@ -82,9 +82,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -0.07,
-      "monthlyReturn": -1.84,
-      "yearlyReturn": 7.58
+      "weeklyReturn": 1.38,
+      "monthlyReturn": -3.33,
+      "yearlyReturn": 5.75
     },
     {
       "code": "270042",
@@ -94,9 +94,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.09,
-      "monthlyReturn": -2.07,
-      "yearlyReturn": 7.2
+      "weeklyReturn": 1.43,
+      "monthlyReturn": -3.67,
+      "yearlyReturn": 5.26
     },
     {
       "code": "040046",
@@ -106,9 +106,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.09,
-      "monthlyReturn": -1.96,
-      "yearlyReturn": 7.39
+      "weeklyReturn": 1.43,
+      "monthlyReturn": -3.54,
+      "yearlyReturn": 5.49
     },
     {
       "code": "018043",
@@ -118,9 +118,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.08,
-      "monthlyReturn": -1.84,
-      "yearlyReturn": 8.03
+      "weeklyReturn": 1.38,
+      "monthlyReturn": -3.36,
+      "yearlyReturn": 6.18
     },
     {
       "code": "016532",
@@ -130,9 +130,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.04,
-      "monthlyReturn": -1.73,
-      "yearlyReturn": 8.84
+      "weeklyReturn": 1.42,
+      "monthlyReturn": -3.25,
+      "yearlyReturn": 7.11
     },
     {
       "code": "160213",
@@ -142,9 +142,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.04,
-      "monthlyReturn": -2.06,
-      "yearlyReturn": 8.54
+      "weeklyReturn": 1.43,
+      "monthlyReturn": -3.65,
+      "yearlyReturn": 6.57
     },
     {
       "code": "019547",
@@ -154,9 +154,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.07,
-      "monthlyReturn": -1.78,
-      "yearlyReturn": 8.53
+      "weeklyReturn": 1.32,
+      "monthlyReturn": -3.2,
+      "yearlyReturn": 6.74
     },
     {
       "code": "016055",
@@ -166,9 +166,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.08,
-      "monthlyReturn": -1.66,
-      "yearlyReturn": 9.17
+      "weeklyReturn": 1.38,
+      "monthlyReturn": -3.18,
+      "yearlyReturn": 7.31
     },
     {
       "code": "161130",
@@ -178,9 +178,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.07,
-      "monthlyReturn": -1.77,
-      "yearlyReturn": 8.1
+      "weeklyReturn": 1.39,
+      "monthlyReturn": -3.28,
+      "yearlyReturn": 6.3
     },
     {
       "code": "018966",
@@ -190,9 +190,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.03,
-      "monthlyReturn": -1.79,
-      "yearlyReturn": 5.45
+      "weeklyReturn": 1.42,
+      "monthlyReturn": -3.29,
+      "yearlyReturn": 3.67
     },
     {
       "code": "015299",
@@ -202,9 +202,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -0.17,
-      "monthlyReturn": -2.05,
-      "yearlyReturn": 8.12
+      "weeklyReturn": 1.28,
+      "monthlyReturn": -3.48,
+      "yearlyReturn": 6.23
     }
   ]
 }
