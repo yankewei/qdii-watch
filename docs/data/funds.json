@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T11:53:06.421Z",
+  "updatedAt": "2026-11-13T19:15:18.496Z",
   "fundCount": 17,
   "funds": [
     {
@@ -82,9 +82,9 @@
       "statusText": "限大额",
       "limitAmount": 10,
       "rawStatus": "限大额",
-      "weeklyReturn": -0.18,
-      "monthlyReturn": -7.85,
-      "yearlyReturn": 4.54
+      "weeklyReturn": 5.91,
+      "monthlyReturn": -7.48,
+      "yearlyReturn": 4.33
     },
     {
       "code": "270042",
