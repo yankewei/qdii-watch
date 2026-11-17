@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T12:48:10.527Z",
+  "updatedAt": "2026-11-17T23:21:40.715Z",
   "fundCount": 17,
   "funds": [
     {
@@ -85,18 +85,6 @@
       "weeklyReturn": -2.45,
       "monthlyReturn": -6.53,
       "yearlyReturn": 2.43
-    },
-    {
-      "code": "270042",
-      "name": "广发纳指100ETF联接(QDII)A",
-      "company": "广发基金",
-      "status": "suspended",
-      "statusText": "暂停申购",
-      "limitAmount": null,
-      "rawStatus": "暂停申购",
-      "weeklyReturn": -2.63,
-      "monthlyReturn": -7.08,
-      "yearlyReturn": 1.83
     },
     {
       "code": "040046",
@@ -205,6 +193,18 @@
       "weeklyReturn": -2.45,
       "monthlyReturn": -6.66,
       "yearlyReturn": 3.02
+    },
+    {
+      "code": "270042",
+      "name": "广发纳指100ETF联接(QDII)A",
+      "company": "广发基金",
+      "status": "error",
+      "statusText": "获取失败",
+      "limitAmount": null,
+      "rawStatus": "",
+      "weeklyReturn": -2.63,
+      "monthlyReturn": -7.08,
+      "yearlyReturn": 1.83
     }
   ]
 }
