@@ -1,91 +1,7 @@
 {
-  "updatedAt": "2026-11-24T19:21:42.722Z",
+  "updatedAt": "2026-11-25T13:54:52.310Z",
   "fundCount": 17,
   "funds": [
-    {
-      "code": "019524",
-      "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
-      "company": "华泰柏瑞基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 5,
-      "rawStatus": "限大额",
-      "weeklyReturn": -1.6,
-      "monthlyReturn": -7.12,
-      "yearlyReturn": 4.15
-    },
-    {
-      "code": "019441",
-      "name": "万家纳斯达克100指数发起式(QDII)A",
-      "company": "万家基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 5,
-      "rawStatus": "限大额",
-      "weeklyReturn": -1.58,
-      "monthlyReturn": -7.26,
-      "yearlyReturn": 4.69
-    },
-    {
-      "code": "000834",
-      "name": "大成纳斯达克100ETF联接(QDII)A",
-      "company": "大成基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": -1.81,
-      "monthlyReturn": -8.17,
-      "yearlyReturn": 2.17
-    },
-    {
-      "code": "016452",
-      "name": "南方纳斯达克100指数发起(QDII)A",
-      "company": "南方基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": -1.59,
-      "monthlyReturn": -7.34,
-      "yearlyReturn": 3.98
-    },
-    {
-      "code": "539001",
-      "name": "建信纳斯达克100指数(QDII)A",
-      "company": "建信基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": -1.42,
-      "monthlyReturn": -6.94,
-      "yearlyReturn": 3.42
-    },
-    {
-      "code": "019172",
-      "name": "摩根纳斯达克100指数(QDII)A",
-      "company": "摩根基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": -1.55,
-      "monthlyReturn": -7.18,
-      "yearlyReturn": 4.25
-    },
-    {
-      "code": "019736",
-      "name": "宝盈纳斯达克100指数发起(QDII)A",
-      "company": "宝盈基金",
-      "status": "limited",
-      "statusText": "限大额",
-      "limitAmount": 10,
-      "rawStatus": "限大额",
-      "weeklyReturn": -1.56,
-      "monthlyReturn": -7.24,
-      "yearlyReturn": 3.77
-    },
     {
       "code": "270042",
       "name": "广发纳指100ETF联接(QDII)A",
@@ -94,9 +10,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.7,
-      "monthlyReturn": -7.83,
-      "yearlyReturn": 3.16
+      "weeklyReturn": -2.96,
+      "monthlyReturn": -9.68,
+      "yearlyReturn": -1.45
     },
     {
       "code": "040046",
@@ -106,9 +22,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.68,
-      "monthlyReturn": -7.75,
-      "yearlyReturn": 3.47
+      "weeklyReturn": -2.93,
+      "monthlyReturn": -9.6,
+      "yearlyReturn": -1.15
     },
     {
       "code": "018043",
@@ -118,9 +34,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.55,
-      "monthlyReturn": -7.3,
-      "yearlyReturn": 4.16
+      "weeklyReturn": -2.77,
+      "monthlyReturn": -9.08,
+      "yearlyReturn": -0.29
     },
     {
       "code": "016532",
@@ -130,9 +46,21 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.56,
-      "monthlyReturn": -7.21,
-      "yearlyReturn": 5.28
+      "weeklyReturn": -2.77,
+      "monthlyReturn": -8.99,
+      "yearlyReturn": 0.81
+    },
+    {
+      "code": "000834",
+      "name": "大成纳斯达克100ETF联接(QDII)A",
+      "company": "大成基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": -3.02,
+      "monthlyReturn": -9.99,
+      "yearlyReturn": -2.33
     },
     {
       "code": "160213",
@@ -142,9 +70,21 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.69,
-      "monthlyReturn": -7.89,
-      "yearlyReturn": 4.38
+      "weeklyReturn": -2.92,
+      "monthlyReturn": -9.73,
+      "yearlyReturn": -0.35
+    },
+    {
+      "code": "016452",
+      "name": "南方纳斯达克100指数发起(QDII)A",
+      "company": "南方基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": -2.8,
+      "monthlyReturn": -9.12,
+      "yearlyReturn": -0.45
     },
     {
       "code": "019547",
@@ -154,9 +94,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.53,
-      "monthlyReturn": -7.1,
-      "yearlyReturn": 4.75
+      "weeklyReturn": -2.71,
+      "monthlyReturn": -8.83,
+      "yearlyReturn": 0.38
     },
     {
       "code": "016055",
@@ -166,9 +106,33 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.58,
-      "monthlyReturn": -7.3,
-      "yearlyReturn": 5.24
+      "weeklyReturn": -2.78,
+      "monthlyReturn": -9.07,
+      "yearlyReturn": 0.76
+    },
+    {
+      "code": "539001",
+      "name": "建信纳斯达克100指数(QDII)A",
+      "company": "建信基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": -2.61,
+      "monthlyReturn": -8.7,
+      "yearlyReturn": -0.63
+    },
+    {
+      "code": "019524",
+      "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
+      "company": "华泰柏瑞基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": -2.8,
+      "monthlyReturn": -8.9,
+      "yearlyReturn": -0.25
     },
     {
       "code": "161130",
@@ -178,9 +142,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.57,
-      "monthlyReturn": -7.23,
-      "yearlyReturn": 4.62
+      "weeklyReturn": -2.75,
+      "monthlyReturn": -8.99,
+      "yearlyReturn": 0.21
     },
     {
       "code": "018966",
@@ -190,9 +154,45 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.54,
-      "monthlyReturn": -7.17,
-      "yearlyReturn": 2.66
+      "weeklyReturn": -2.7,
+      "monthlyReturn": -8.91,
+      "yearlyReturn": -1.74
+    },
+    {
+      "code": "019172",
+      "name": "摩根纳斯达克100指数(QDII)A",
+      "company": "摩根基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": -2.7,
+      "monthlyReturn": -8.88,
+      "yearlyReturn": 0.19
+    },
+    {
+      "code": "019736",
+      "name": "宝盈纳斯达克100指数发起(QDII)A",
+      "company": "宝盈基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": -2.8,
+      "monthlyReturn": -9.03,
+      "yearlyReturn": -0.68
+    },
+    {
+      "code": "019441",
+      "name": "万家纳斯达克100指数发起式(QDII)A",
+      "company": "万家基金",
+      "status": "suspended",
+      "statusText": "暂停申购",
+      "limitAmount": null,
+      "rawStatus": "暂停申购",
+      "weeklyReturn": -1.58,
+      "monthlyReturn": -7.26,
+      "yearlyReturn": 4.69
     },
     {
       "code": "015299",
@@ -202,9 +202,9 @@
       "statusText": "暂停申购",
       "limitAmount": null,
       "rawStatus": "暂停申购",
-      "weeklyReturn": -1.6,
-      "monthlyReturn": -7.25,
-      "yearlyReturn": 4.25
+      "weeklyReturn": -2.74,
+      "monthlyReturn": -8.99,
+      "yearlyReturn": -0.11
     }
   ]
 }
